@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AB13046029070FA900A8BBA8 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB13045F29070FA900A8BBA8 /* AuthViewController.xib */; };
+		AB130462290719C000A8BBA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB130461290719C000A8BBA8 /* GoogleService-Info.plist */; };
+		AB13046529071AD600A8BBA8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AB13046429071AD600A8BBA8 /* FirebaseAuth */; };
+		AB13046729071AD600A8BBA8 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = AB13046629071AD600A8BBA8 /* FirebaseFirestore */; };
 		ABE488A2290707FD0065BCCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE488A1290707FD0065BCCA /* AppDelegate.swift */; };
 		ABE488A4290707FD0065BCCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE488A3290707FD0065BCCA /* SceneDelegate.swift */; };
 		ABE488AC290707FD0065BCCA /* BazaarWay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABE488AA290707FD0065BCCA /* BazaarWay.xcdatamodeld */; };
@@ -20,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		AB13045F29070FA900A8BBA8 /* AuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
+		AB130461290719C000A8BBA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ABE4889E290707FD0065BCCA /* BazaarWay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BazaarWay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE488A1290707FD0065BCCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABE488A3290707FD0065BCCA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB13046529071AD600A8BBA8 /* FirebaseAuth in Frameworks */,
+				AB13046729071AD600A8BBA8 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				ABE488B2290707FF0065BCCA /* Info.plist */,
+				AB130461290719C000A8BBA8 /* GoogleService-Info.plist */,
 			);
 			path = Plists;
 			sourceTree = "<group>";
@@ -188,6 +195,10 @@
 			dependencies = (
 			);
 			name = BazaarWay;
+			packageProductDependencies = (
+				AB13046429071AD600A8BBA8 /* FirebaseAuth */,
+				AB13046629071AD600A8BBA8 /* FirebaseFirestore */,
+			);
 			productName = BazaarWay;
 			productReference = ABE4889E290707FD0065BCCA /* BazaarWay.app */;
 			productType = "com.apple.product-type.application";
@@ -216,6 +227,9 @@
 				Base,
 			);
 			mainGroup = ABE48895290707FD0065BCCA;
+			packageReferences = (
+				AB13046329071AD600A8BBA8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = ABE4889F290707FD0065BCCA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB13046029070FA900A8BBA8 /* AuthViewController.xib in Resources */,
+				AB130462290719C000A8BBA8 /* GoogleService-Info.plist in Resources */,
 				ABE488B1290707FF0065BCCA /* LaunchScreen.storyboard in Resources */,
 				ABE488AE290707FF0065BCCA /* Assets.xcassets in Resources */,
 			);
@@ -454,6 +469,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AB13046329071AD600A8BBA8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AB13046429071AD600A8BBA8 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB13046329071AD600A8BBA8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		AB13046629071AD600A8BBA8 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB13046329071AD600A8BBA8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		ABE488AA290707FD0065BCCA /* BazaarWay.xcdatamodeld */ = {
