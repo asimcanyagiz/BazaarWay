@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB13046029070FA900A8BBA8 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB13045F29070FA900A8BBA8 /* AuthViewController.xib */; };
 		ABE488A2290707FD0065BCCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE488A1290707FD0065BCCA /* AppDelegate.swift */; };
 		ABE488A4290707FD0065BCCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE488A3290707FD0065BCCA /* SceneDelegate.swift */; };
 		ABE488AC290707FD0065BCCA /* BazaarWay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABE488AA290707FD0065BCCA /* BazaarWay.xcdatamodeld */; };
 		ABE488AE290707FF0065BCCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABE488AD290707FF0065BCCA /* Assets.xcassets */; };
 		ABE488B1290707FF0065BCCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABE488AF290707FF0065BCCA /* LaunchScreen.storyboard */; };
+		ABE488C829070EF60065BCCA /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE488C629070EF60065BCCA /* AuthViewController.swift */; };
+		ABE488CB29070F3F0065BCCA /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE488CA29070F3F0065BCCA /* AuthViewModel.swift */; };
+		ABE488CD29070F470065BCCA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE488CC29070F470065BCCA /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB13045F29070FA900A8BBA8 /* AuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
 		ABE4889E290707FD0065BCCA /* BazaarWay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BazaarWay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE488A1290707FD0065BCCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABE488A3290707FD0065BCCA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -22,6 +27,9 @@
 		ABE488AD290707FF0065BCCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABE488B0290707FF0065BCCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABE488B2290707FF0065BCCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABE488C629070EF60065BCCA /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		ABE488CA29070F3F0065BCCA /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		ABE488CC29070F470065BCCA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +143,7 @@
 		ABE488C229070BF00065BCCA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				ABE488CA29070F3F0065BCCA /* AuthViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -142,6 +151,7 @@
 		ABE488C329070BFD0065BCCA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				ABE488C629070EF60065BCCA /* AuthViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -149,6 +159,7 @@
 		ABE488C429070C090065BCCA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AB13045F29070FA900A8BBA8 /* AuthViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -156,6 +167,7 @@
 		ABE488C529070C0E0065BCCA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				ABE488CC29070F470065BCCA /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -218,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB13046029070FA900A8BBA8 /* AuthViewController.xib in Resources */,
 				ABE488B1290707FF0065BCCA /* LaunchScreen.storyboard in Resources */,
 				ABE488AE290707FF0065BCCA /* Assets.xcassets in Resources */,
 			);
@@ -230,6 +243,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABE488CB29070F3F0065BCCA /* AuthViewModel.swift in Sources */,
+				ABE488C829070EF60065BCCA /* AuthViewController.swift in Sources */,
+				ABE488CD29070F470065BCCA /* User.swift in Sources */,
 				ABE488AC290707FD0065BCCA /* BazaarWay.xcdatamodeld in Sources */,
 				ABE488A2290707FD0065BCCA /* AppDelegate.swift in Sources */,
 				ABE488A4290707FD0065BCCA /* SceneDelegate.swift in Sources */,
