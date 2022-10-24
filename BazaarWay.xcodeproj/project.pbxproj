@@ -58,16 +58,72 @@
 		ABE488A0290707FD0065BCCA /* BazaarWay */ = {
 			isa = PBXGroup;
 			children = (
-				ABE488A1290707FD0065BCCA /* AppDelegate.swift */,
-				ABE488A3290707FD0065BCCA /* SceneDelegate.swift */,
+				ABE488B8290709230065BCCA /* App */,
+				ABE488AA290707FD0065BCCA /* BazaarWay.xcdatamodeld */,
+				ABE488BF29070A280065BCCA /* Screens */,
 				ABE488A5290707FD0065BCCA /* ViewController.swift */,
 				ABE488A7290707FD0065BCCA /* Main.storyboard */,
-				ABE488AD290707FF0065BCCA /* Assets.xcassets */,
-				ABE488AF290707FF0065BCCA /* LaunchScreen.storyboard */,
-				ABE488B2290707FF0065BCCA /* Info.plist */,
-				ABE488AA290707FD0065BCCA /* BazaarWay.xcdatamodeld */,
 			);
 			path = BazaarWay;
+			sourceTree = "<group>";
+		};
+		ABE488B8290709230065BCCA /* App */ = {
+			isa = PBXGroup;
+			children = (
+				ABE488B92907092C0065BCCA /* Plists */,
+				ABE488BB290709380065BCCA /* Assets */,
+				ABE488BC290709410065BCCA /* View */,
+				ABE488BD2907094A0065BCCA /* Delegate */,
+				ABE488BE290709500065BCCA /* Core */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		ABE488B92907092C0065BCCA /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+				ABE488B2290707FF0065BCCA /* Info.plist */,
+			);
+			path = Plists;
+			sourceTree = "<group>";
+		};
+		ABE488BB290709380065BCCA /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				ABE488AD290707FF0065BCCA /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		ABE488BC290709410065BCCA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ABE488AF290707FF0065BCCA /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ABE488BD2907094A0065BCCA /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				ABE488A1290707FD0065BCCA /* AppDelegate.swift */,
+				ABE488A3290707FD0065BCCA /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		ABE488BE290709500065BCCA /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		ABE488BF29070A280065BCCA /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,7 +349,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5DKBCS58WX;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BazaarWay/Info.plist;
+				INFOPLIST_FILE = BazaarWay/App/Plists/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -321,7 +377,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5DKBCS58WX;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BazaarWay/Info.plist;
+				INFOPLIST_FILE = BazaarWay/App/Plists/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
