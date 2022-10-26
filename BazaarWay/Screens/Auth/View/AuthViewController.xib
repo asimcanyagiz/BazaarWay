@@ -10,6 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthViewController" customModule="BazaarWay" customModuleProvider="target">
             <connections>
+                <outlet property="emailTextField" destination="FTi-FE-JYd" id="Htc-dv-MB5"/>
+                <outlet property="passwordTextField" destination="MQU-CR-vP8" id="oeF-JX-wNg"/>
+                <outlet property="segmentedControl" destination="t5c-nf-Pne" id="Ea9-RB-AeI"/>
+                <outlet property="submitButton" destination="ut2-q1-p0M" id="fyY-Zh-ZvE"/>
+                <outlet property="titleLabel" destination="rQp-U8-9Wa" id="Ft9-Uq-P60"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,12 +31,15 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="t5c-nf-Pne">
-                    <rect key="frame" x="16" y="322" width="358" height="31"/>
+                    <rect key="frame" x="16" y="322" width="358" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <segments>
-                        <segment title="First"/>
-                        <segment title="Second"/>
+                        <segment title="Sign In"/>
+                        <segment title="Sign Up"/>
                     </segments>
+                    <connections>
+                        <action selector="didSegmentedButtonPressed:" destination="-1" eventType="valueChanged" id="PF3-Gt-i2d"/>
+                    </connections>
                 </segmentedControl>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="edk-8h-woT">
                     <rect key="frame" x="16" y="419" width="358" height="34"/>
@@ -39,13 +47,13 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FTi-FE-JYd">
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test@test.com" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FTi-FE-JYd">
                     <rect key="frame" x="16" y="483" width="358" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MQU-CR-vP8">
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MQU-CR-vP8">
                     <rect key="frame" x="16" y="555" width="358" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -58,6 +66,9 @@
                     <buttonConfiguration key="configuration" style="filled" title="Button">
                         <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="didSubmitButtonPressed:" destination="-1" eventType="touchUpInside" id="lr5-Ey-eLj"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

@@ -11,6 +11,9 @@
 		AB130462290719C000A8BBA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB130461290719C000A8BBA8 /* GoogleService-Info.plist */; };
 		AB13046529071AD600A8BBA8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AB13046429071AD600A8BBA8 /* FirebaseAuth */; };
 		AB13046729071AD600A8BBA8 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = AB13046629071AD600A8BBA8 /* FirebaseFirestore */; };
+		AB13046A2907285C00A8BBA8 /* UserDefaultConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1304692907285C00A8BBA8 /* UserDefaultConstants.swift */; };
+		AB13046D2907289400A8BBA8 /* UserDefaultsAccesible.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB13046C2907289400A8BBA8 /* UserDefaultsAccesible.swift */; };
+		AB13046F29072B7E00A8BBA8 /* Encodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB13046E29072B7E00A8BBA8 /* Encodable+Extensions.swift */; };
 		ABE488A2290707FD0065BCCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE488A1290707FD0065BCCA /* AppDelegate.swift */; };
 		ABE488A4290707FD0065BCCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE488A3290707FD0065BCCA /* SceneDelegate.swift */; };
 		ABE488AC290707FD0065BCCA /* BazaarWay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABE488AA290707FD0065BCCA /* BazaarWay.xcdatamodeld */; };
@@ -24,6 +27,9 @@
 /* Begin PBXFileReference section */
 		AB13045F29070FA900A8BBA8 /* AuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
 		AB130461290719C000A8BBA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AB1304692907285C00A8BBA8 /* UserDefaultConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultConstants.swift; sourceTree = "<group>"; };
+		AB13046C2907289400A8BBA8 /* UserDefaultsAccesible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsAccesible.swift; sourceTree = "<group>"; };
+		AB13046E29072B7E00A8BBA8 /* Encodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extensions.swift"; sourceTree = "<group>"; };
 		ABE4889E290707FD0065BCCA /* BazaarWay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BazaarWay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE488A1290707FD0065BCCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABE488A3290707FD0065BCCA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +55,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB1304682907283700A8BBA8 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				AB1304692907285C00A8BBA8 /* UserDefaultConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		AB13046B2907286800A8BBA8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AB13046C2907289400A8BBA8 /* UserDefaultsAccesible.swift */,
+				AB13046E29072B7E00A8BBA8 /* Encodable+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		ABE48895290707FD0065BCCA = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +147,8 @@
 		ABE488BE290709500065BCCA /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				AB1304682907283700A8BBA8 /* Constants */,
+				AB13046B2907286800A8BBA8 /* Extensions */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -258,9 +283,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB13046D2907289400A8BBA8 /* UserDefaultsAccesible.swift in Sources */,
 				ABE488CB29070F3F0065BCCA /* AuthViewModel.swift in Sources */,
 				ABE488C829070EF60065BCCA /* AuthViewController.swift in Sources */,
 				ABE488CD29070F470065BCCA /* User.swift in Sources */,
+				AB13046F29072B7E00A8BBA8 /* Encodable+Extensions.swift in Sources */,
+				AB13046A2907285C00A8BBA8 /* UserDefaultConstants.swift in Sources */,
 				ABE488AC290707FD0065BCCA /* BazaarWay.xcdatamodeld in Sources */,
 				ABE488A2290707FD0065BCCA /* AppDelegate.swift in Sources */,
 				ABE488A4290707FD0065BCCA /* SceneDelegate.swift in Sources */,
