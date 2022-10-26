@@ -14,8 +14,9 @@
 		AB13046A2907285C00A8BBA8 /* UserDefaultConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1304692907285C00A8BBA8 /* UserDefaultConstants.swift */; };
 		AB13046D2907289400A8BBA8 /* UserDefaultsAccesible.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB13046C2907289400A8BBA8 /* UserDefaultsAccesible.swift */; };
 		AB13046F29072B7E00A8BBA8 /* Encodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB13046E29072B7E00A8BBA8 /* Encodable+Extensions.swift */; };
+		AB13047329098C7800A8BBA8 /* LaunchSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB13047129098C7800A8BBA8 /* LaunchSplashViewController.swift */; };
+		AB13047429098C7800A8BBA8 /* LaunchSplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB13047229098C7800A8BBA8 /* LaunchSplashViewController.xib */; };
 		ABE488A2290707FD0065BCCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE488A1290707FD0065BCCA /* AppDelegate.swift */; };
-		ABE488A4290707FD0065BCCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE488A3290707FD0065BCCA /* SceneDelegate.swift */; };
 		ABE488AC290707FD0065BCCA /* BazaarWay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABE488AA290707FD0065BCCA /* BazaarWay.xcdatamodeld */; };
 		ABE488AE290707FF0065BCCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABE488AD290707FF0065BCCA /* Assets.xcassets */; };
 		ABE488B1290707FF0065BCCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABE488AF290707FF0065BCCA /* LaunchScreen.storyboard */; };
@@ -30,9 +31,10 @@
 		AB1304692907285C00A8BBA8 /* UserDefaultConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultConstants.swift; sourceTree = "<group>"; };
 		AB13046C2907289400A8BBA8 /* UserDefaultsAccesible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsAccesible.swift; sourceTree = "<group>"; };
 		AB13046E29072B7E00A8BBA8 /* Encodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extensions.swift"; sourceTree = "<group>"; };
+		AB13047129098C7800A8BBA8 /* LaunchSplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSplashViewController.swift; sourceTree = "<group>"; };
+		AB13047229098C7800A8BBA8 /* LaunchSplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchSplashViewController.xib; sourceTree = "<group>"; };
 		ABE4889E290707FD0065BCCA /* BazaarWay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BazaarWay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE488A1290707FD0065BCCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ABE488A3290707FD0065BCCA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ABE488AB290707FD0065BCCA /* BazaarWay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BazaarWay.xcdatamodel; sourceTree = "<group>"; };
 		ABE488AD290707FF0065BCCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABE488B0290707FF0065BCCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,6 +72,15 @@
 				AB13046E29072B7E00A8BBA8 /* Encodable+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AB13047029098BE800A8BBA8 /* LaunchSplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				AB13047129098C7800A8BBA8 /* LaunchSplashViewController.swift */,
+				AB13047229098C7800A8BBA8 /* LaunchSplashViewController.xib */,
+			);
+			path = LaunchSplashScreen;
 			sourceTree = "<group>";
 		};
 		ABE48895290707FD0065BCCA = {
@@ -139,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				ABE488A1290707FD0065BCCA /* AppDelegate.swift */,
-				ABE488A3290707FD0065BCCA /* SceneDelegate.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -156,6 +166,7 @@
 		ABE488BF29070A280065BCCA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				AB13047029098BE800A8BBA8 /* LaunchSplashScreen */,
 				ABE488C129070BEB0065BCCA /* Auth */,
 			);
 			path = Screens;
@@ -272,6 +283,7 @@
 				AB13046029070FA900A8BBA8 /* AuthViewController.xib in Resources */,
 				AB130462290719C000A8BBA8 /* GoogleService-Info.plist in Resources */,
 				ABE488B1290707FF0065BCCA /* LaunchScreen.storyboard in Resources */,
+				AB13047429098C7800A8BBA8 /* LaunchSplashViewController.xib in Resources */,
 				ABE488AE290707FF0065BCCA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB13047329098C7800A8BBA8 /* LaunchSplashViewController.swift in Sources */,
 				AB13046D2907289400A8BBA8 /* UserDefaultsAccesible.swift in Sources */,
 				ABE488CB29070F3F0065BCCA /* AuthViewModel.swift in Sources */,
 				ABE488C829070EF60065BCCA /* AuthViewController.swift in Sources */,
@@ -291,7 +304,6 @@
 				AB13046A2907285C00A8BBA8 /* UserDefaultConstants.swift in Sources */,
 				ABE488AC290707FD0065BCCA /* BazaarWay.xcdatamodeld in Sources */,
 				ABE488A2290707FD0065BCCA /* AppDelegate.swift in Sources */,
-				ABE488A4290707FD0065BCCA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
