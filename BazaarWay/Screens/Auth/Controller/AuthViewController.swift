@@ -98,7 +98,7 @@ final class AuthViewController: UIViewController {
             viewModel.signIn(email: credential,
                              password: password,
                              completion: { [weak self] in
-                guard let self = self else { return }
+                guard self != nil else { return }
                 print("succesfully login")
                 
             })
