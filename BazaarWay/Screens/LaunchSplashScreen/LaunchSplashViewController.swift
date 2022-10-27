@@ -15,20 +15,25 @@ class LaunchSplashViewController: UIViewController {
         super.viewDidLoad()
         activityIndicator.startAnimating()
         
-        let timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(setScreenTransfer), userInfo: nil, repeats: false)
+        _ = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(setScreenTransfer), userInfo: nil, repeats: false)
+        self.navigationController?.navigationItem.hidesBackButton = true
     }
 
     @objc func setScreenTransfer(){
-        
-        let authViewModel = AuthViewModel()
-        let authViewController = AuthViewController(viewModel: authViewModel)
-//        authViewController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "person"), selectedImage: UIImage(named: "person"))
+        let mainScreenViewModel = MainScreenViewModel()
+        let mainScreenViewController = MainScreenViewController(viewModel: mainScreenViewModel)
+        let authScreenViewModel = AuthViewModel()
+        let authScreenViewController = AuthViewController(viewModel: authScreenViewModel)
+        let launchSplashScreenViewController = LaunchSplashViewController()
         
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [authViewController]
-        self.navigationController?.pushViewController(tabBarController, animated: false)
-        self.navigationController?.navigationItem.hidesBackButton = true
+        mainScreenViewController.tabBarItem = UITabBarItem(title: "Products", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house"))
+        authScreenViewController.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), selectedImage: UIImage(systemName: "magnifyingglass"))
+        launchSplashScreenViewController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person"))
+        tabBarController.viewControllers = [mainScreenViewController, authScreenViewController, launchSplashScreenViewController]
+        
         tabBarController.navigationItem.hidesBackButton = true
+        self.navigationController?.pushViewController(tabBarController, animated: false)
     }
 
 }
