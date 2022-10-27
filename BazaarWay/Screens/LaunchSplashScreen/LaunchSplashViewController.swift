@@ -24,13 +24,14 @@ class LaunchSplashViewController: UIViewController {
         let mainScreenViewController = MainScreenViewController(viewModel: mainScreenViewModel)
         let authScreenViewModel = AuthViewModel()
         let authScreenViewController = AuthViewController(viewModel: authScreenViewModel)
-        let launchSplashScreenViewController = LaunchSplashViewController()
+        let profileScreenViewModel = ProfileScreenViewModel()
+        let profileScreenViewController = ProfileScreenViewController(viewModel: profileScreenViewModel)
         
         let tabBarController = UITabBarController()
         mainScreenViewController.tabBarItem = UITabBarItem(title: "Products", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house"))
         authScreenViewController.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), selectedImage: UIImage(systemName: "magnifyingglass"))
-        launchSplashScreenViewController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person"))
-        tabBarController.viewControllers = [mainScreenViewController, authScreenViewController, launchSplashScreenViewController]
+        profileScreenViewController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person"))
+        tabBarController.viewControllers = [mainScreenViewController, authScreenViewController, profileScreenViewController]
         
         tabBarController.navigationItem.hidesBackButton = true
         self.navigationController?.pushViewController(tabBarController, animated: false)
