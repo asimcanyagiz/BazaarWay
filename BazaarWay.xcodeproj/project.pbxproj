@@ -23,6 +23,9 @@
 		AB302619290B049F00279201 /* ProfileScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB302618290B049F00279201 /* ProfileScreenViewController.xib */; };
 		AB30261B290B051300279201 /* ProfileScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB30261A290B051300279201 /* ProfileScreenViewModel.swift */; };
 		AB30261E290B0DBE00279201 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB30261D290B0DBE00279201 /* AlertPresentable.swift */; };
+		AB302626290B139300279201 /* SearchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB302624290B139300279201 /* SearchScreenViewController.swift */; };
+		AB302627290B139300279201 /* SearchScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB302625290B139300279201 /* SearchScreenViewController.xib */; };
+		AB302629290B153300279201 /* SearchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB302628290B153300279201 /* SearchScreenViewModel.swift */; };
 		ABE488A2290707FD0065BCCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE488A1290707FD0065BCCA /* AppDelegate.swift */; };
 		ABE488AC290707FD0065BCCA /* BazaarWay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABE488AA290707FD0065BCCA /* BazaarWay.xcdatamodeld */; };
 		ABE488AE290707FF0065BCCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABE488AD290707FF0065BCCA /* Assets.xcassets */; };
@@ -47,6 +50,9 @@
 		AB302618290B049F00279201 /* ProfileScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileScreenViewController.xib; sourceTree = "<group>"; };
 		AB30261A290B051300279201 /* ProfileScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewModel.swift; sourceTree = "<group>"; };
 		AB30261D290B0DBE00279201 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
+		AB302624290B139300279201 /* SearchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewController.swift; sourceTree = "<group>"; };
+		AB302625290B139300279201 /* SearchScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchScreenViewController.xib; sourceTree = "<group>"; };
+		AB302628290B153300279201 /* SearchScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewModel.swift; sourceTree = "<group>"; };
 		ABE4889E290707FD0065BCCA /* BazaarWay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BazaarWay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE488A1290707FD0065BCCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABE488AB290707FD0065BCCA /* BazaarWay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BazaarWay.xcdatamodel; sourceTree = "<group>"; };
@@ -189,6 +195,48 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		AB30261F290B135E00279201 /* SearchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				AB302623290B137900279201 /* Model */,
+				AB302622290B137200279201 /* View */,
+				AB302621290B136D00279201 /* ViewModel */,
+				AB302620290B136900279201 /* Controller */,
+			);
+			path = SearchScreen;
+			sourceTree = "<group>";
+		};
+		AB302620290B136900279201 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AB302624290B139300279201 /* SearchScreenViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AB302621290B136D00279201 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AB302628290B153300279201 /* SearchScreenViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AB302622290B137200279201 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB302625290B139300279201 /* SearchScreenViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AB302623290B137900279201 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		ABE48895290707FD0065BCCA = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +321,7 @@
 		ABE488BF29070A280065BCCA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				AB30261F290B135E00279201 /* SearchScreen */,
 				AB118EDD290AFCB5005DEA4E /* ProfileScreen */,
 				AB118ED22909BCDE005DEA4E /* MainScreen */,
 				AB13047029098BE800A8BBA8 /* LaunchSplashScreen */,
@@ -393,6 +442,7 @@
 				AB13046029070FA900A8BBA8 /* AuthViewController.xib in Resources */,
 				AB130462290719C000A8BBA8 /* GoogleService-Info.plist in Resources */,
 				ABE488B1290707FF0065BCCA /* LaunchScreen.storyboard in Resources */,
+				AB302627290B139300279201 /* SearchScreenViewController.xib in Resources */,
 				AB13047429098C7800A8BBA8 /* LaunchSplashViewController.xib in Resources */,
 				ABE488AE290707FF0065BCCA /* Assets.xcassets in Resources */,
 				AB118EDA2909BD2A005DEA4E /* MainScreenViewController.xib in Resources */,
@@ -413,6 +463,8 @@
 				AB30261B290B051300279201 /* ProfileScreenViewModel.swift in Sources */,
 				ABE488CB29070F3F0065BCCA /* AuthViewModel.swift in Sources */,
 				ABE488C829070EF60065BCCA /* AuthViewController.swift in Sources */,
+				AB302626290B139300279201 /* SearchScreenViewController.swift in Sources */,
+				AB302629290B153300279201 /* SearchScreenViewModel.swift in Sources */,
 				ABE488CD29070F470065BCCA /* User.swift in Sources */,
 				AB118ED92909BD2A005DEA4E /* MainScreenViewController.swift in Sources */,
 				AB13046F29072B7E00A8BBA8 /* Encodable+Extensions.swift in Sources */,
