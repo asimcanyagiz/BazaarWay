@@ -26,6 +26,9 @@
 		AB302626290B139300279201 /* SearchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB302624290B139300279201 /* SearchScreenViewController.swift */; };
 		AB302627290B139300279201 /* SearchScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB302625290B139300279201 /* SearchScreenViewController.xib */; };
 		AB302629290B153300279201 /* SearchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB302628290B153300279201 /* SearchScreenViewModel.swift */; };
+		AB302631290BD4E600279201 /* FakeStoreApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB302630290BD4E600279201 /* FakeStoreApi.swift */; };
+		AB302633290BD51000279201 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB302632290BD51000279201 /* Products.swift */; };
+		AB302636290BDE0A00279201 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = AB302635290BDE0A00279201 /* Moya */; };
 		ABE488A2290707FD0065BCCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE488A1290707FD0065BCCA /* AppDelegate.swift */; };
 		ABE488AC290707FD0065BCCA /* BazaarWay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABE488AA290707FD0065BCCA /* BazaarWay.xcdatamodeld */; };
 		ABE488AE290707FF0065BCCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABE488AD290707FF0065BCCA /* Assets.xcassets */; };
@@ -53,6 +56,8 @@
 		AB302624290B139300279201 /* SearchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewController.swift; sourceTree = "<group>"; };
 		AB302625290B139300279201 /* SearchScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchScreenViewController.xib; sourceTree = "<group>"; };
 		AB302628290B153300279201 /* SearchScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewModel.swift; sourceTree = "<group>"; };
+		AB302630290BD4E600279201 /* FakeStoreApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeStoreApi.swift; sourceTree = "<group>"; };
+		AB302632290BD51000279201 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		ABE4889E290707FD0065BCCA /* BazaarWay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BazaarWay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE488A1290707FD0065BCCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABE488AB290707FD0065BCCA /* BazaarWay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BazaarWay.xcdatamodel; sourceTree = "<group>"; };
@@ -71,6 +76,7 @@
 			files = (
 				AB13046529071AD600A8BBA8 /* FirebaseAuth in Frameworks */,
 				AB13046729071AD600A8BBA8 /* FirebaseFirestore in Frameworks */,
+				AB302636290BDE0A00279201 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,11 +243,44 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		AB30262A290BC77200279201 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AB30262B290BC77700279201 /* Api */,
+				AB30262C290BC77C00279201 /* Model */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		AB30262B290BC77700279201 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				AB302630290BD4E600279201 /* FakeStoreApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		AB30262C290BC77C00279201 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB302632290BD51000279201 /* Products.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AB302634290BDE0A00279201 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ABE48895290707FD0065BCCA = {
 			isa = PBXGroup;
 			children = (
 				ABE488A0290707FD0065BCCA /* BazaarWay */,
 				ABE4889F290707FD0065BCCA /* Products */,
+				AB302634290BDE0A00279201 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -311,6 +350,7 @@
 		ABE488BE290709500065BCCA /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				AB30262A290BC77200279201 /* Network */,
 				AB30261C290B0DAA00279201 /* Helpers */,
 				AB1304682907283700A8BBA8 /* Constants */,
 				AB13046B2907286800A8BBA8 /* Extensions */,
@@ -392,6 +432,7 @@
 			packageProductDependencies = (
 				AB13046429071AD600A8BBA8 /* FirebaseAuth */,
 				AB13046629071AD600A8BBA8 /* FirebaseFirestore */,
+				AB302635290BDE0A00279201 /* Moya */,
 			);
 			productName = BazaarWay;
 			productReference = ABE4889E290707FD0065BCCA /* BazaarWay.app */;
@@ -423,6 +464,7 @@
 			mainGroup = ABE48895290707FD0065BCCA;
 			packageReferences = (
 				AB13046329071AD600A8BBA8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				AB30262D290BC97100279201 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = ABE4889F290707FD0065BCCA /* Products */;
 			projectDirPath = "";
@@ -460,10 +502,12 @@
 				AB13047329098C7800A8BBA8 /* LaunchSplashViewController.swift in Sources */,
 				AB118EDC2909BDA2005DEA4E /* MainScreenViewModel.swift in Sources */,
 				AB13046D2907289400A8BBA8 /* UserDefaultsAccesible.swift in Sources */,
+				AB302631290BD4E600279201 /* FakeStoreApi.swift in Sources */,
 				AB30261B290B051300279201 /* ProfileScreenViewModel.swift in Sources */,
 				ABE488CB29070F3F0065BCCA /* AuthViewModel.swift in Sources */,
 				ABE488C829070EF60065BCCA /* AuthViewController.swift in Sources */,
 				AB302626290B139300279201 /* SearchScreenViewController.swift in Sources */,
+				AB302633290BD51000279201 /* Products.swift in Sources */,
 				AB302629290B153300279201 /* SearchScreenViewModel.swift in Sources */,
 				ABE488CD29070F470065BCCA /* User.swift in Sources */,
 				AB118ED92909BD2A005DEA4E /* MainScreenViewController.swift in Sources */,
@@ -616,6 +660,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -642,6 +687,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -687,6 +733,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		AB30262D290BC97100279201 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -699,6 +753,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AB13046329071AD600A8BBA8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		AB302635290BDE0A00279201 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB30262D290BC97100279201 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
 		};
 /* End XCSwiftPackageProductDependency section */
 

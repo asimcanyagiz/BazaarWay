@@ -7,6 +7,19 @@
 
 import Foundation
 import UIKit
+import Moya
+
+//@objc
+//protocol ProductDelegate: AnyObject {
+//    @objc optional func didErrorOccurred(_ error: Error)
+//}
+
+//Cases for change photos
+enum ProductChanges {
+    case didErrorOccurred(_ error: Error)
+    case didFetchProduct
+}
+
 
 final class SearchScreenViewModel {
     
@@ -20,4 +33,34 @@ final class SearchScreenViewModel {
         searchBar.delegate = controller
         return searchBar
     }
+    
+    
+    var changeHandler: ((ProductChanges) -> Void)?
+    
+    private var products: Products? {
+        didSet {
+            self.changeHandler?(.didFetchProduct)
+        }
+    }
+    
+    //MARK: - Functions
+    //Fetch the photos from api
+    func fetchProducts() {
+        provider.request(.products) { result in
+            switch result {
+            case .failure(let error):
+                self.changeHandler?(.didErrorOccurred(error))
+            case .success(let response):
+                do {
+                    let products = try JSONDecoder().decode(Products.self, from: response.data)
+                    self.products = products
+                } catch {
+                    self.changeHandler?(.didErrorOccurred(error))
+                }
+            }
+        }
+    }
+    
+    
+    
 }

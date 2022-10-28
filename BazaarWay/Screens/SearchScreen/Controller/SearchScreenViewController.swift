@@ -36,6 +36,8 @@ final class SearchScreenViewController: UIViewController {
         
         //SearchBar adaption
         stackView.addSubview(viewModel.addSearchBar(controller: self))
+        
+        viewModel.fetchProducts()
     }
 
 }
