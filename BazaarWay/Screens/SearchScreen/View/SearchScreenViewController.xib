@@ -44,8 +44,8 @@
                             <rect key="frame" x="0.0" y="0.0" width="378" height="32"/>
                             <segments>
                                 <segment title="All"/>
-                                <segment title="Men's"/>
                                 <segment title="Women's"/>
+                                <segment title="Men's"/>
                                 <segment title="Jewelery"/>
                                 <segment title="Electronics"/>
                             </segments>

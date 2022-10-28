@@ -33,10 +33,10 @@ final class SearchScreenViewController: UIViewController {
     
     
     //MARK: - Life Cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         //collection delegates
@@ -79,9 +79,11 @@ extension SearchScreenViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //Cell sizes
         let screenWidth = UIScreen.main.bounds.width
-        let scaleFactor = (screenWidth / 2) - 6
-
-        return CGSize(width: scaleFactor, height: scaleFactor)
+        let widthScaleFactor = (screenWidth / 2) - 6
+        let screenHeight = UIScreen.main.bounds.height
+        let heightScaleFactor = screenHeight / 3
+        
+        return CGSize(width: widthScaleFactor, height: heightScaleFactor)
     }
 }
 
@@ -100,12 +102,16 @@ extension SearchScreenViewController: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SearchScreenCollectionViewCell
         
-        guard let photo = viewModel.productsForIndexPath(indexPath) else {
+        guard let products = viewModel.productsForIndexPath(indexPath) else {
             fatalError("Photo not found")
         }
-
+        
         //Catch photos with kingfisher
-        cell.imageViewCell.kf.setImage(with: photo.imageURL)
+        cell.imageViewCell.kf.setImage(with: products.imageURL)
+        cell.titleLabel.text = products.title
+        cell.priceLabel.text = "\(products.price)$"
+        cell.rateLabel.text = products.ratingToStar
+        
         return cell
     }
 }
@@ -116,6 +122,10 @@ extension SearchScreenViewController: UICollectionViewDataSource {
 extension SearchScreenViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange textSearched: String) {
         if let text = searchBar.text, textSearched.count > 1 {
+            viewModel.products = viewModel.products?.filter({ $0.title.hasPrefix(text)})
+            collectionView.reloadData()
+        } else {
+            viewModel.fetchProducts()
         }
     }
 }

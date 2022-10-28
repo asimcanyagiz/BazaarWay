@@ -32,7 +32,7 @@ final class SearchScreenViewModel {
     
     var changeHandler: ((ProductChanges) -> Void)?
     
-    private var products: [Products]? {
+    internal var products: [Products]? {
         didSet {
             self.changeHandler?(.didFetchProduct)
         }
