@@ -29,6 +29,9 @@
 		AB302631290BD4E600279201 /* FakeStoreApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB302630290BD4E600279201 /* FakeStoreApi.swift */; };
 		AB302633290BD51000279201 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB302632290BD51000279201 /* Products.swift */; };
 		AB302636290BDE0A00279201 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = AB302635290BDE0A00279201 /* Moya */; };
+		AB30263B290BE39500279201 /* SearchScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB302639290BE39500279201 /* SearchScreenCollectionViewCell.swift */; };
+		AB30263C290BE39500279201 /* SearchScreenCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB30263A290BE39500279201 /* SearchScreenCollectionViewCell.xib */; };
+		AB30263F290BE51F00279201 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AB30263E290BE51F00279201 /* Kingfisher */; };
 		ABE488A2290707FD0065BCCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE488A1290707FD0065BCCA /* AppDelegate.swift */; };
 		ABE488AC290707FD0065BCCA /* BazaarWay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABE488AA290707FD0065BCCA /* BazaarWay.xcdatamodeld */; };
 		ABE488AE290707FF0065BCCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABE488AD290707FF0065BCCA /* Assets.xcassets */; };
@@ -58,6 +61,8 @@
 		AB302628290B153300279201 /* SearchScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewModel.swift; sourceTree = "<group>"; };
 		AB302630290BD4E600279201 /* FakeStoreApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeStoreApi.swift; sourceTree = "<group>"; };
 		AB302632290BD51000279201 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		AB302639290BE39500279201 /* SearchScreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenCollectionViewCell.swift; sourceTree = "<group>"; };
+		AB30263A290BE39500279201 /* SearchScreenCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchScreenCollectionViewCell.xib; sourceTree = "<group>"; };
 		ABE4889E290707FD0065BCCA /* BazaarWay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BazaarWay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE488A1290707FD0065BCCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABE488AB290707FD0065BCCA /* BazaarWay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BazaarWay.xcdatamodel; sourceTree = "<group>"; };
@@ -74,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB30263F290BE51F00279201 /* Kingfisher in Frameworks */,
 				AB13046529071AD600A8BBA8 /* FirebaseAuth in Frameworks */,
 				AB13046729071AD600A8BBA8 /* FirebaseFirestore in Frameworks */,
 				AB302636290BDE0A00279201 /* Moya in Frameworks */,
@@ -231,6 +237,7 @@
 		AB302622290B137200279201 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AB302638290BE38200279201 /* Cell */,
 				AB302625290B139300279201 /* SearchScreenViewController.xib */,
 			);
 			path = View;
@@ -273,6 +280,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB302638290BE38200279201 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AB302639290BE39500279201 /* SearchScreenCollectionViewCell.swift */,
+				AB30263A290BE39500279201 /* SearchScreenCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		ABE48895290707FD0065BCCA = {
@@ -433,6 +449,7 @@
 				AB13046429071AD600A8BBA8 /* FirebaseAuth */,
 				AB13046629071AD600A8BBA8 /* FirebaseFirestore */,
 				AB302635290BDE0A00279201 /* Moya */,
+				AB30263E290BE51F00279201 /* Kingfisher */,
 			);
 			productName = BazaarWay;
 			productReference = ABE4889E290707FD0065BCCA /* BazaarWay.app */;
@@ -465,6 +482,7 @@
 			packageReferences = (
 				AB13046329071AD600A8BBA8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				AB30262D290BC97100279201 /* XCRemoteSwiftPackageReference "Moya" */,
+				AB30263D290BE51E00279201 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = ABE4889F290707FD0065BCCA /* Products */;
 			projectDirPath = "";
@@ -481,6 +499,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB302619290B049F00279201 /* ProfileScreenViewController.xib in Resources */,
+				AB30263C290BE39500279201 /* SearchScreenCollectionViewCell.xib in Resources */,
 				AB13046029070FA900A8BBA8 /* AuthViewController.xib in Resources */,
 				AB130462290719C000A8BBA8 /* GoogleService-Info.plist in Resources */,
 				ABE488B1290707FF0065BCCA /* LaunchScreen.storyboard in Resources */,
@@ -511,6 +530,7 @@
 				AB302629290B153300279201 /* SearchScreenViewModel.swift in Sources */,
 				ABE488CD29070F470065BCCA /* User.swift in Sources */,
 				AB118ED92909BD2A005DEA4E /* MainScreenViewController.swift in Sources */,
+				AB30263B290BE39500279201 /* SearchScreenCollectionViewCell.swift in Sources */,
 				AB13046F29072B7E00A8BBA8 /* Encodable+Extensions.swift in Sources */,
 				AB118EE5290B03DD005DEA4E /* ProfileScreenViewController.swift in Sources */,
 				AB13046A2907285C00A8BBA8 /* UserDefaultConstants.swift in Sources */,
@@ -741,6 +761,14 @@
 				minimumVersion = 15.0.0;
 			};
 		};
+		AB30263D290BE51E00279201 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -758,6 +786,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AB30262D290BC97100279201 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		AB30263E290BE51F00279201 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB30263D290BE51E00279201 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 

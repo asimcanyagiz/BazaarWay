@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchScreenViewController" customModule="BazaarWay" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="vDo-1g-Kf4" id="K8U-97-Uzy"/>
                 <outlet property="stackView" destination="yWN-Xa-rJy" id="Sym-0S-lrt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vDo-1g-Kf4">
-                    <rect key="frame" x="0.0" y="122" width="390" height="688"/>
+                    <rect key="frame" x="0.0" y="134" width="390" height="676"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aos-ox-dno">
                         <size key="itemSize" width="128" height="128"/>
@@ -35,27 +36,35 @@
                         <constraint firstAttribute="height" constant="44" id="XHf-jG-Cea"/>
                     </constraints>
                 </stackView>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lLS-lq-HW5">
-                    <rect key="frame" x="0.0" y="91" width="390" height="32"/>
-                    <segments>
-                        <segment title="First"/>
-                        <segment title="Second"/>
-                    </segments>
-                </segmentedControl>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JiM-K2-cRq">
+                    <rect key="frame" x="6" y="97" width="378" height="31"/>
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lLS-lq-HW5">
+                            <rect key="frame" x="0.0" y="0.0" width="378" height="32"/>
+                            <segments>
+                                <segment title="All"/>
+                                <segment title="Men's"/>
+                                <segment title="Women's"/>
+                                <segment title="Jewelery"/>
+                                <segment title="Electronics"/>
+                            </segments>
+                        </segmentedControl>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="yWN-Xa-rJy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Hi3-yn-LAn"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vDo-1g-Kf4" secondAttribute="trailing" id="Jcb-jJ-ijo"/>
+                <constraint firstItem="vDo-1g-Kf4" firstAttribute="top" secondItem="JiM-K2-cRq" secondAttribute="bottom" constant="6" id="K09-ZN-YE4"/>
                 <constraint firstItem="yWN-Xa-rJy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TLT-OK-yqT"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lLS-lq-HW5" secondAttribute="trailing" id="W0C-rb-bnH"/>
-                <constraint firstItem="lLS-lq-HW5" firstAttribute="top" secondItem="yWN-Xa-rJy" secondAttribute="bottom" id="cZ9-QU-EMN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="vDo-1g-Kf4" secondAttribute="bottom" id="e2L-jx-OP6"/>
-                <constraint firstItem="vDo-1g-Kf4" firstAttribute="top" secondItem="lLS-lq-HW5" secondAttribute="bottom" id="ehF-Bj-Y80"/>
+                <constraint firstItem="JiM-K2-cRq" firstAttribute="top" secondItem="yWN-Xa-rJy" secondAttribute="bottom" constant="6" id="gLD-m6-LaP"/>
                 <constraint firstItem="vDo-1g-Kf4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="l3X-Wm-Cfj"/>
-                <constraint firstItem="lLS-lq-HW5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tBq-6Y-cU6"/>
+                <constraint firstItem="JiM-K2-cRq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="6" id="ufW-jF-jUq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yWN-Xa-rJy" secondAttribute="trailing" id="vTd-ge-yv2"/>
+                <constraint firstAttribute="trailing" secondItem="JiM-K2-cRq" secondAttribute="trailing" constant="6" id="yJE-B5-yaZ"/>
             </constraints>
             <point key="canvasLocation" x="47.692307692307693" y="-11.374407582938389"/>
         </view>

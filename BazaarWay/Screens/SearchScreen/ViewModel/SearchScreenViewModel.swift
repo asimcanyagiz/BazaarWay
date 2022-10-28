@@ -37,10 +37,13 @@ final class SearchScreenViewModel {
     
     var changeHandler: ((ProductChanges) -> Void)?
     
-    private var products: Products? {
+    private var products: [Products]? {
         didSet {
             self.changeHandler?(.didFetchProduct)
         }
+    }
+    var numberOfRows: Int {
+        products?.count ?? .zero
     }
     
     //MARK: - Functions
@@ -52,13 +55,18 @@ final class SearchScreenViewModel {
                 self.changeHandler?(.didErrorOccurred(error))
             case .success(let response):
                 do {
-                    let products = try JSONDecoder().decode(Products.self, from: response.data)
+                    let products = try JSONDecoder().decode([Products].self, from: response.data)
                     self.products = products
                 } catch {
                     self.changeHandler?(.didErrorOccurred(error))
                 }
             }
         }
+    }
+    
+    //Call the current photo
+    func productsForIndexPath(_ indexPath: IndexPath) -> Products? {
+        products?[indexPath.row]
     }
     
     
