@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchScreenViewController" customModule="BazaarWay" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="vDo-1g-Kf4" id="K8U-97-Uzy"/>
+                <outlet property="segmentedControl" destination="lLS-lq-HW5" id="5Mh-yP-ScG"/>
                 <outlet property="stackView" destination="yWN-Xa-rJy" id="Sym-0S-lrt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -48,6 +49,9 @@
                                 <segment title="Jewelery"/>
                                 <segment title="Electronics"/>
                             </segments>
+                            <connections>
+                                <action selector="didSegmentedButtonPressed:" destination="-1" eventType="valueChanged" id="pGv-kw-LxC"/>
+                            </connections>
                         </segmentedControl>
                     </subviews>
                 </stackView>

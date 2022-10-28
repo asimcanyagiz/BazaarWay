@@ -25,8 +25,9 @@ final class SearchScreenViewController: UIViewController {
     
     //MARK: - UI Elements
     
-    @IBOutlet weak var stackView: UIStackView!
     
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     
@@ -60,7 +61,19 @@ final class SearchScreenViewController: UIViewController {
         }
     }
     
+    //MARK: - Functions
+    @IBAction func didSegmentedButtonPressed(_ sender: UISegmentedControl) {
+        let title = segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex)
+        viewModel.fetchProducts(categoryText: title!)
+        collectionView.reloadData()
+    }
+    
+    
+    
 }
+
+
+
 //MARK: - Delegates
 extension SearchScreenViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -78,11 +91,9 @@ extension SearchScreenViewController: UICollectionViewDelegate {
 }
 
 extension SearchScreenViewController: UICollectionViewDataSource {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfRows
     }
-    
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -98,6 +109,9 @@ extension SearchScreenViewController: UICollectionViewDataSource {
         return cell
     }
 }
+
+
+
 // MARK: - UISearchResultsUpdating
 extension SearchScreenViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange textSearched: String) {

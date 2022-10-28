@@ -9,12 +9,7 @@ import Foundation
 import UIKit
 import Moya
 
-//@objc
-//protocol ProductDelegate: AnyObject {
-//    @objc optional func didErrorOccurred(_ error: Error)
-//}
-
-//Cases for change photos
+//Cases for change Product
 enum ProductChanges {
     case didErrorOccurred(_ error: Error)
     case didFetchProduct
@@ -48,8 +43,8 @@ final class SearchScreenViewModel {
     
     //MARK: - Functions
     //Fetch the photos from api
-    func fetchProducts() {
-        provider.request(.products) { result in
+    func fetchProducts(categoryText: String = "All") {
+        provider.request(FakeStoreApi(rawValue: categoryText) ?? .allProducts) { result in
             switch result {
             case .failure(let error):
                 self.changeHandler?(.didErrorOccurred(error))

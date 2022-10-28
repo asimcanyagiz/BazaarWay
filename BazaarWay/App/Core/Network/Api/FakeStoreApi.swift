@@ -13,9 +13,12 @@ let plugin: PluginType = NetworkLoggerPlugin(configuration: .init(logOptions: .v
 let provider = MoyaProvider<FakeStoreApi>(plugins: [plugin])
 
 //Cases for different call methods
-enum FakeStoreApi {
-    case products
-    case categories
+enum FakeStoreApi: String {
+    case allProducts = "All"
+    case jewelery = "Jewelery"
+    case electronics = "Electronics"
+    case mens = "Men\'s"
+    case womens = "Women\'s"
 }
 
 // MARK: - TargetType
@@ -30,10 +33,16 @@ extension FakeStoreApi: TargetType {
     
     var path: String {
         switch self {
-        case .categories:
-            return "/categories"
-        case .products:
+        case .allProducts:
             return "/"
+        case .jewelery:
+            return "/category/jewelery"
+        case .electronics:
+            return "/category/electronics"
+        case .mens:
+            return "/category/men's clothing"
+        case .womens:
+            return "/category/women's clothing"
         }
     }
     
@@ -42,12 +51,7 @@ extension FakeStoreApi: TargetType {
     }
     
     var task: Moya.Task {
-        switch self {
-        case .categories:
-            return .requestPlain
-        case .products:
-            return .requestPlain
-        }
+        .requestPlain
     }
     
     var headers: [String : String]? {
