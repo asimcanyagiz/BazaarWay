@@ -39,6 +39,8 @@
 		ABE488C829070EF60065BCCA /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE488C629070EF60065BCCA /* AuthViewController.swift */; };
 		ABE488CB29070F3F0065BCCA /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE488CA29070F3F0065BCCA /* AuthViewModel.swift */; };
 		ABE488CD29070F470065BCCA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE488CC29070F470065BCCA /* User.swift */; };
+		ABF8078A290D8CE900E9E52E /* MainScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF80788290D8CE900E9E52E /* MainScreenCollectionViewCell.swift */; };
+		ABF8078B290D8CE900E9E52E /* MainScreenCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABF80789290D8CE900E9E52E /* MainScreenCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		ABE488C629070EF60065BCCA /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		ABE488CA29070F3F0065BCCA /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		ABE488CC29070F470065BCCA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		ABF80788290D8CE900E9E52E /* MainScreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCollectionViewCell.swift; sourceTree = "<group>"; };
+		ABF80789290D8CE900E9E52E /* MainScreenCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainScreenCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,7 @@
 		AB118ED62909BCFC005DEA4E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ABF80787290D8CD300E9E52E /* Cell */,
 				AB118ED82909BD2A005DEA4E /* MainScreenViewController.xib */,
 			);
 			path = View;
@@ -429,6 +434,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		ABF80787290D8CD300E9E52E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				ABF80788290D8CE900E9E52E /* MainScreenCollectionViewCell.swift */,
+				ABF80789290D8CE900E9E52E /* MainScreenCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -504,6 +518,7 @@
 				AB130462290719C000A8BBA8 /* GoogleService-Info.plist in Resources */,
 				ABE488B1290707FF0065BCCA /* LaunchScreen.storyboard in Resources */,
 				AB302627290B139300279201 /* SearchScreenViewController.xib in Resources */,
+				ABF8078B290D8CE900E9E52E /* MainScreenCollectionViewCell.xib in Resources */,
 				AB13047429098C7800A8BBA8 /* LaunchSplashViewController.xib in Resources */,
 				ABE488AE290707FF0065BCCA /* Assets.xcassets in Resources */,
 				AB118EDA2909BD2A005DEA4E /* MainScreenViewController.xib in Resources */,
@@ -522,6 +537,7 @@
 				AB118EDC2909BDA2005DEA4E /* MainScreenViewModel.swift in Sources */,
 				AB13046D2907289400A8BBA8 /* UserDefaultsAccesible.swift in Sources */,
 				AB302631290BD4E600279201 /* FakeStoreApi.swift in Sources */,
+				ABF8078A290D8CE900E9E52E /* MainScreenCollectionViewCell.swift in Sources */,
 				AB30261B290B051300279201 /* ProfileScreenViewModel.swift in Sources */,
 				ABE488CB29070F3F0065BCCA /* AuthViewModel.swift in Sources */,
 				ABE488C829070EF60065BCCA /* AuthViewController.swift in Sources */,

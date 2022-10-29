@@ -7,12 +7,29 @@
 
 import Foundation
 import UIKit
+import Moya
+
+//Cases for change Product
+enum ProductsChanges {
+    case didErrorOccurred(_ error: Error)
+    case didFetchProduct
+}
 
 final class MainScreenViewModel {
     
+    var changeHandler: ((ProductsChanges) -> Void)?
+    
+    internal var products: [Products]? {
+        didSet {
+            self.changeHandler?(.didFetchProduct)
+        }
+    }
+    var numberOfRows: Int {
+        products?.count ?? .zero
+    }
+    
     
     //MARK: - Tabbar Setup
-    
     func setBasketButton(controller: UIViewController){
         
         let basketButtonImage = UIImage(systemName: "basket")
@@ -24,5 +41,30 @@ final class MainScreenViewModel {
     
     @objc func basketButton(){
          print("clicked")
+    }
+    
+   
+    
+    //MARK: - Functions
+    //Fetch the photos from api
+    func fetchProducts(categoryText: String = "All") {
+        provider.request(FakeStoreApi(rawValue: categoryText) ?? .allProducts) { result in
+            switch result {
+            case .failure(let error):
+                self.changeHandler?(.didErrorOccurred(error))
+            case .success(let response):
+                do {
+                    let products = try JSONDecoder().decode([Products].self, from: response.data)
+                    self.products = products
+                } catch {
+                    self.changeHandler?(.didErrorOccurred(error))
+                }
+            }
+        }
+    }
+    
+    //Call the current photo
+    func productsForIndexPath(_ indexPath: IndexPath) -> Products? {
+        products?[indexPath.row]
     }
 }

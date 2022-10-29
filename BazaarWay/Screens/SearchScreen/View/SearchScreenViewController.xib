@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vDo-1g-Kf4">
-                    <rect key="frame" x="0.0" y="134" width="390" height="676"/>
+                    <rect key="frame" x="0.0" y="87" width="390" height="757"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aos-ox-dno">
                         <size key="itemSize" width="128" height="128"/>
@@ -32,13 +32,13 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yWN-Xa-rJy">
-                    <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                    <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="XHf-jG-Cea"/>
                     </constraints>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JiM-K2-cRq">
-                    <rect key="frame" x="6" y="97" width="378" height="31"/>
+                    <rect key="frame" x="6" y="50" width="378" height="31"/>
                     <subviews>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lLS-lq-HW5">
                             <rect key="frame" x="0.0" y="0.0" width="378" height="32"/>

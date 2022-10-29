@@ -20,6 +20,13 @@ class SearchScreenCollectionViewCell: UICollectionViewCell {
         // Initialization code
         addButton.titleLabel?.text = "Add to Cart"
         addButton.setImage(UIImage(systemName: "cart.badge.plus"), for: .normal)
+        
+        //Customize ImageBorder
+        imageViewCell.translatesAutoresizingMaskIntoConstraints = false
+        imageViewCell.clipsToBounds = true
+        imageViewCell.layer.cornerRadius = 12
+        imageViewCell.layer.borderWidth = 1
+        imageViewCell.layer.borderColor = UIColor.gray.cgColor
     }
 
 }
