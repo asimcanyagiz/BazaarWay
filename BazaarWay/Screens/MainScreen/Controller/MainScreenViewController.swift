@@ -23,9 +23,14 @@ final class MainScreenViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - CollectionView
-   
-    @IBOutlet weak var collectionView: UICollectionView!
+    //MARK: - CollectionViews
+    @IBOutlet weak var collectionViewA: UICollectionView!
+    
+    @IBOutlet weak var collectionViewB: UICollectionView!
+    
+//    let collectionViewAIdentifier = "CollectionViewACell"
+//    let collectionViewBIdentifier = "CollectionViewBCell"
+    
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -35,17 +40,25 @@ final class MainScreenViewController: UIViewController {
         
         
         //collection delegates
-        collectionView.dataSource = self
-        collectionView.delegate = self
+        collectionViewA.delegate = self
+        collectionViewB.delegate = self
+        
+        collectionViewA.dataSource = self
+        collectionViewB.dataSource = self
         let nib = UINib(nibName: "MainScreenCollectionViewCell", bundle: nil)
+        collectionViewA.register(nib, forCellWithReuseIdentifier: "firstCell")
+        let nib2 = UINib(nibName: "MainScreenCollectionViewCell2", bundle: nil)
+        collectionViewB.register(nib2, forCellWithReuseIdentifier: "secondCell")
         
-        collectionView.register(nib, forCellWithReuseIdentifier: "cell")
         
+        
+        //network
         viewModel.fetchProducts()
         viewModel.changeHandler = { change in
             switch change {
             case .didFetchProduct:
-                self.collectionView.reloadData()
+                self.collectionViewA.reloadData()
+                self.collectionViewB.reloadData()
                 
             case .didErrorOccurred(let error):
                 print(String(describing: error))
@@ -58,7 +71,7 @@ final class MainScreenViewController: UIViewController {
     }
     
     @objc func basketButton(){
-         print("clicked")
+        print("clicked")
     }
 }
 
@@ -69,22 +82,50 @@ extension MainScreenViewController: UICollectionViewDelegateFlowLayout, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.numberOfRows
+        
+        if collectionView == self.collectionViewA {
+            return viewModel.numberOfRows
+        }
+        print("========")
+        print(viewModel.numberOfRows2)
+        return viewModel.numberOfRows2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MainScreenCollectionViewCell
-        
-        guard let products = viewModel.productsForIndexPath(indexPath) else {
-            fatalError("Photo not found")
+        if collectionView == self.collectionViewA {
+            let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "firstCell", for: indexPath) as! MainScreenCollectionViewCell
+            
+            // Set up cell
+            guard let products = viewModel.productsForIndexPath(indexPath) else {
+                fatalError("Photo not found")
+            }
+            
+            //Catch photos with kingfisher
+            cellA.imageView.kf.setImage(with: products.imageURL)
+            cellA.titleLabel.text = products.title
+            cellA.priceLabel.text = "\(products.price)$"
+            
+            return cellA
         }
         
-        //Catch photos with kingfisher
-        cell.imageView.kf.setImage(with: products.imageURL)
-        cell.titleLabel.text = products.title
-        cell.priceLabel.text = "\(products.price)$"
+        else {
+            let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "secondCell", for: indexPath) as! MainScreenCollectionViewCell2
+            
+//             Set up cell
+            guard let products = viewModel.productsForIndexPath2(indexPath) else {
+                fatalError("Photo not found")
+            }
+
+            //Catch photos with kingfisher
+            cellB.imageView2.kf.setImage(with: products.imageURL)
+            cellB.titleLabel2.text = products.title
+            cellB.priceLabel2.text = "\(products.price)$"
+            cellB.backgroundColor = .black
+            
+            
+            return cellB
+        }
         
-        return cell
     }
     
     

@@ -26,7 +26,7 @@ class SearchScreenCollectionViewCell: UICollectionViewCell {
         imageViewCell.clipsToBounds = true
         imageViewCell.layer.cornerRadius = 12
         imageViewCell.layer.borderWidth = 1
-        imageViewCell.layer.borderColor = UIColor.gray.cgColor
+        imageViewCell.layer.borderColor = UIColor.lightGray.cgColor
     }
 
 }
