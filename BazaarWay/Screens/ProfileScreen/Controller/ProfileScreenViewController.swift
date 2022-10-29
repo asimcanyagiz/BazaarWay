@@ -6,8 +6,19 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ProfileScreenViewController: UIViewController, AlertPresentable {
+    
+    //MARK: - UI ELEMENTS
+    
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var logButton: UIButton!
+    
+    
     
     // MARK: - View Model
     private let viewModel: ProfileScreenViewModel
@@ -27,14 +38,22 @@ class ProfileScreenViewController: UIViewController, AlertPresentable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        viewModel.userStatus(controller: self)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+
+        viewModel.userStatus(controller: self)
     }
     
     
-    @IBAction func didLogOutPressed(_ sender: UIButton) {
-        viewModel.logOut(controller: self)
+    @IBAction func didAuthButtonPressed(_ sender: UIButton) {
+        if sender.titleLabel?.text == "Log In" {
+            viewModel.logIn(controller: self)
+        }else {
+            viewModel.logOut(controller: self)
+            
+        }
     }
-    
     
     
 

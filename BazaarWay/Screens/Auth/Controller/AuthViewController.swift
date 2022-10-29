@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseAuth
 
-final class AuthViewController: UIViewController {
+final class AuthViewController: UIViewController, AlertPresentable {
     
     // MARK: - View Model
     private let viewModel: AuthViewModel
@@ -32,8 +32,8 @@ final class AuthViewController: UIViewController {
     
     var authType: AuthType = .signIn {
         didSet {
-            titleLabel.text = title
-            submitButton.setTitle(title, for: .normal)
+            titleLabel.text = authType.rawValue
+//            submitButton.setTitle(title, for: .normal)
         }
     }
     
@@ -66,7 +66,7 @@ final class AuthViewController: UIViewController {
         viewModel.changeHandler = { change in
             switch change {
             case .didErrorOccurred(let error):
-                print(error)
+                self.showError(error)
             case .didSignUpSuccessful:
                 print("SIGN UP SUCCESSFUL!")
             }
@@ -99,7 +99,8 @@ final class AuthViewController: UIViewController {
                              password: password,
                              completion: { [weak self] in
                 guard self != nil else { return }
-                print("succesfully login")
+                //Navigate to profilescreen
+                self?.navigationController?.popViewController(animated: true)
                 
             })
         case .signUp:
