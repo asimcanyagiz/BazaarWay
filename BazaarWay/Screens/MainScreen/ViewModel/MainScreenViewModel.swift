@@ -28,7 +28,7 @@ final class MainScreenViewModel {
         products?.count ?? .zero
     }
     var numberOfRows2: Int {
-        var products2 = products?.filter({ $0.category.hasPrefix("jewelery")})
+        let products2 = products?.filter({ $0.category.hasPrefix("jewelery")})
         return products2?.count ?? .zero
     }
     
@@ -72,7 +72,7 @@ final class MainScreenViewModel {
         products?[indexPath.row]
     }
     func productsForIndexPath2(_ indexPath: IndexPath) -> Products? {
-        var products2 = products?.filter({ $0.category.hasPrefix("jewelery")})
+        let products2 = products?.filter({ $0.category.hasPrefix("jewelery")})
         return products2?[indexPath.row]
     }
 }

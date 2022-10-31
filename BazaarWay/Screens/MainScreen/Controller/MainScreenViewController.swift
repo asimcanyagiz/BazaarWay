@@ -24,31 +24,55 @@ final class MainScreenViewController: UIViewController {
     }
     
     //MARK: - CollectionViews
-    @IBOutlet weak var collectionViewA: UICollectionView!
     
-    @IBOutlet weak var collectionViewB: UICollectionView!
     
-//    let collectionViewAIdentifier = "CollectionViewACell"
-//    let collectionViewBIdentifier = "CollectionViewBCell"
+    @IBOutlet weak var collectionViewTop: UICollectionView!
+    @IBOutlet weak var collectionViewJewelery: UICollectionView!
+    @IBOutlet weak var collectionViewElectronics: UICollectionView!
+    @IBOutlet weak var collectionViewMens: UICollectionView!
+    @IBOutlet weak var collectionViewWomens: UICollectionView!
+    @IBOutlet weak var collectionViewTodays: UICollectionView!
+    
+    
+    //MARK: - Stack View
+    
+    @IBOutlet weak var stackViewButtons: UIStackView!
+    
+    @IBOutlet weak var stackViewUIView: UIView!
+    
     
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        stackViewUIView.roundCorners(corners: [.topLeft, .topRight], radius: 30)
+        
         
         viewModel.setBasketButton(controller: self)
         
         
         //collection delegates
-        collectionViewA.delegate = self
-        collectionViewB.delegate = self
+        collectionViewTop.delegate = self
+        collectionViewJewelery.delegate = self
+        collectionViewElectronics.delegate = self
+        collectionViewMens.delegate = self
+        collectionViewWomens.delegate = self
+        collectionViewTodays.delegate = self
         
-        collectionViewA.dataSource = self
-        collectionViewB.dataSource = self
+        collectionViewTop.dataSource = self
+        collectionViewJewelery.dataSource = self
+        collectionViewElectronics.dataSource = self
+        collectionViewMens.dataSource = self
+        collectionViewWomens.dataSource = self
+        collectionViewTodays.dataSource = self
+        
         let nib = UINib(nibName: "MainScreenCollectionViewCell", bundle: nil)
-        collectionViewA.register(nib, forCellWithReuseIdentifier: "firstCell")
-        let nib2 = UINib(nibName: "MainScreenCollectionViewCell2", bundle: nil)
-        collectionViewB.register(nib2, forCellWithReuseIdentifier: "secondCell")
+        collectionViewTop.register(nib, forCellWithReuseIdentifier: "mainCell")
+        collectionViewJewelery.register(nib, forCellWithReuseIdentifier: "mainCell")
+        collectionViewElectronics.register(nib, forCellWithReuseIdentifier: "mainCell")
+        collectionViewMens.register(nib, forCellWithReuseIdentifier: "mainCell")
+        collectionViewWomens.register(nib, forCellWithReuseIdentifier: "mainCell")
+        collectionViewTodays.register(nib, forCellWithReuseIdentifier: "mainCell")
         
         
         
@@ -57,8 +81,12 @@ final class MainScreenViewController: UIViewController {
         viewModel.changeHandler = { change in
             switch change {
             case .didFetchProduct:
-                self.collectionViewA.reloadData()
-                self.collectionViewB.reloadData()
+                self.collectionViewTop.reloadData()
+                self.collectionViewJewelery.reloadData()
+                self.collectionViewElectronics.reloadData()
+                self.collectionViewMens.reloadData()
+                self.collectionViewWomens.reloadData()
+                self.collectionViewTodays.reloadData()
                 
             case .didErrorOccurred(let error):
                 print(String(describing: error))
@@ -78,12 +106,20 @@ final class MainScreenViewController: UIViewController {
 extension MainScreenViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == self.collectionViewTodays {
+            let screenWidth = UIScreen.main.bounds.width
+            let widthScaleFactor = screenWidth
+            let screenHeight = UIScreen.main.bounds.height
+            let heightScaleFactor = screenHeight / 3
+            
+            return CGSize(width: widthScaleFactor, height: heightScaleFactor)
+        }
         return CGSize(width: collectionView.frame.width/3, height: collectionView.frame.height/1.2)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if collectionView == self.collectionViewA {
+        if collectionView == self.collectionViewTodays {
             return viewModel.numberOfRows
         }
         print("========")
@@ -92,8 +128,8 @@ extension MainScreenViewController: UICollectionViewDelegateFlowLayout, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == self.collectionViewA {
-            let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "firstCell", for: indexPath) as! MainScreenCollectionViewCell
+        if collectionView == self.collectionViewTodays {
+            let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as! MainScreenCollectionViewCell
             
             // Set up cell
             guard let products = viewModel.productsForIndexPath(indexPath) else {
@@ -106,27 +142,47 @@ extension MainScreenViewController: UICollectionViewDelegateFlowLayout, UICollec
             cellA.priceLabel.text = "\(products.price)$"
             
             return cellA
-        }
+        } else if collectionView == self.collectionViewTop {
+        let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as! MainScreenCollectionViewCell
         
-        else {
-            let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "secondCell", for: indexPath) as! MainScreenCollectionViewCell2
-            
 //             Set up cell
-            guard let products = viewModel.productsForIndexPath2(indexPath) else {
-                fatalError("Photo not found")
-            }
-
-            //Catch photos with kingfisher
-            cellB.imageView2.kf.setImage(with: products.imageURL)
-            cellB.titleLabel2.text = products.title
-            cellB.priceLabel2.text = "\(products.price)$"
-            cellB.backgroundColor = .black
-            
-            
-            return cellB
+        guard let products = viewModel.productsForIndexPath2(indexPath) else {
+            fatalError("Photo not found")
         }
+
+        //Catch photos with kingfisher
+        cellB.imageView.kf.setImage(with: products.imageURL)
+        cellB.titleLabel.text = products.title
+        cellB.priceLabel.text = "\(products.price)$"
+        
+        
+        return cellB
+    } else {
+        let cellC = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as! MainScreenCollectionViewCell
+        
+//             Set up cell
+        guard let products = viewModel.productsForIndexPath2(indexPath) else {
+            fatalError("Photo not found")
+        }
+
+        //Catch photos with kingfisher
+        cellC.imageView.kf.setImage(with: products.imageURL)
+        cellC.titleLabel.text = products.title
+        cellC.priceLabel.text = "\(products.price)$"
+        
+        
+        return cellC
+    }
         
     }
     
     
+}
+extension UIView {
+   func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        layer.mask = mask
+    }
 }
