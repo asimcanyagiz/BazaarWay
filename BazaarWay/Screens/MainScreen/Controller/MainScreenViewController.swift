@@ -143,43 +143,75 @@ extension MainScreenViewController: UICollectionViewDelegateFlowLayout, UICollec
             
             return cellA
         } else if collectionView == self.collectionViewTop {
-        let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as! MainScreenCollectionViewCell
-        
-//             Set up cell
-        guard let products = viewModel.productsForIndexPath2(indexPath) else {
-            fatalError("Photo not found")
+            let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as! MainScreenCollectionViewCell
+            
+            //             Set up cell
+            guard let products = viewModel.productsForIndexPath2(indexPath) else {
+                fatalError("Photo not found")
+            }
+            
+            //Catch photos with kingfisher
+            cellB.imageView.kf.setImage(with: products.imageURL)
+            cellB.titleLabel.text = products.title
+            cellB.priceLabel.text = "\(products.price)$"
+            
+            
+            return cellB
+        } else {
+            let cellC = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as! MainScreenCollectionViewCell
+            
+            //             Set up cell
+            guard let products = viewModel.productsForIndexPath2(indexPath) else {
+                fatalError("Photo not found")
+            }
+            
+            //Catch photos with kingfisher
+            cellC.imageView.kf.setImage(with: products.imageURL)
+            cellC.titleLabel.text = products.title
+            cellC.priceLabel.text = "\(products.price)$"
+            
+            
+            return cellC
         }
-
-        //Catch photos with kingfisher
-        cellB.imageView.kf.setImage(with: products.imageURL)
-        cellB.titleLabel.text = products.title
-        cellB.priceLabel.text = "\(products.price)$"
         
+    }
+}
+// MARK: - UICollectionViewDelegate
+extension MainScreenViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        return cellB
-    } else {
-        let cellC = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as! MainScreenCollectionViewCell
-        
-//             Set up cell
-        guard let products = viewModel.productsForIndexPath2(indexPath) else {
-            fatalError("Photo not found")
+        if collectionView == self.collectionViewTodays {
+            
+            // Set up cell
+            guard let products = viewModel.productsForIndexPath(indexPath) else {
+                fatalError("Photo not found")
+            }
+            
+            let detailScreenViewController = DetailScreenViewController()
+            detailScreenViewController.products = products
+            present(detailScreenViewController, animated: true, completion: nil)
+        } else if collectionView == self.collectionViewTop {
+            guard let products = viewModel.productsForIndexPath2(indexPath) else {
+                fatalError("Photo not found")
+            }
+            
+            let detailScreenViewController = DetailScreenViewController()
+            detailScreenViewController.products = products
+            present(detailScreenViewController, animated: true, completion: nil)
+        } else {
+            guard let products = viewModel.productsForIndexPath2(indexPath) else {
+                fatalError("Photo not found")
+            }
+            
+            let detailScreenViewController = DetailScreenViewController()
+            detailScreenViewController.products = products
+            present(detailScreenViewController, animated: true, completion: nil)
         }
-
-        //Catch photos with kingfisher
-        cellC.imageView.kf.setImage(with: products.imageURL)
-        cellC.titleLabel.text = products.title
-        cellC.priceLabel.text = "\(products.price)$"
-        
-        
-        return cellC
-    }
         
     }
-    
-    
 }
 extension UIView {
-   func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()
         mask.path = path.cgPath
