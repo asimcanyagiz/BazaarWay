@@ -6,14 +6,15 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class BasketScreenViewController: UIViewController {
     
     // MARK: - View Model
-    private let viewModel: SearchScreenViewModel
+    private let viewModel: BasketScreenViewModel
     
     // MARK: - Init
-    init(viewModel: SearchScreenViewModel) {
+    init(viewModel: BasketScreenViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -43,10 +44,15 @@ final class BasketScreenViewController: UIViewController {
         
         collectionView.register(nib, forCellWithReuseIdentifier: "cell")
         
-        viewModel.fetchProducts()
+        viewModel.getBasket { error in
+            if let error = error {
+                print(error)
+            } else {
+            }
+        }
         viewModel.changeHandler = { change in
             switch change {
-            case .didFetchProduct:
+            case .didFetchBasket:
                 self.collectionView.reloadData()
                 
             case .didErrorOccurred(let error):
@@ -89,10 +95,10 @@ extension BasketScreenViewController: UICollectionViewDataSource {
             fatalError("Photo not found")
         }
         
-        //Catch photos with kingfisher
-        cell.imageView.kf.setImage(with: products.imageURL)
-        cell.titleLabel.text = products.title
-        cell.priceLabel.text = "\(products.price)$"
+        //We use ! because already data
+        cell.imageView.kf.setImage(with: URL(string: products["image"] as! String))
+        cell.titleLabel.text = "\(products["title"]!)"
+        cell.priceLabel.text = "\(products["price"]!)$"
         
         return cell
     }

@@ -55,13 +55,7 @@ final class DetailScreenViewController: UIViewController {
     
     @IBAction func didAddButtonPressed(_ sender: UIButton) {
         viewModel.addBasket(productsData: products)
-        viewModel.getBasket { error in
-            if let error = error {
-//                self.showError(error)
-                print(error)
-            } else {
-            }
-        }
+        
     }
     
     

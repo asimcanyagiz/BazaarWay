@@ -37,6 +37,7 @@
 		AB5DD5C62911A92C0007DAEF /* DetailScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5DD5C52911A92C0007DAEF /* DetailScreenViewModel.swift */; };
 		AB91129D2912DB3E009FFE4C /* BasketScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB91129B2912DB3E009FFE4C /* BasketScreenCollectionViewCell.swift */; };
 		AB91129E2912DB3E009FFE4C /* BasketScreenCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB91129C2912DB3E009FFE4C /* BasketScreenCollectionViewCell.xib */; };
+		AB9112A0291316C2009FFE4C /* BasketScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB91129F291316C2009FFE4C /* BasketScreenViewModel.swift */; };
 		ABA62CCF2912C767004ACCF7 /* BasketScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA62CCD2912C767004ACCF7 /* BasketScreenViewController.swift */; };
 		ABA62CD02912C767004ACCF7 /* BasketScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA62CCE2912C767004ACCF7 /* BasketScreenViewController.xib */; };
 		ABE488A2290707FD0065BCCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE488A1290707FD0065BCCA /* AppDelegate.swift */; };
@@ -77,6 +78,7 @@
 		AB5DD5C52911A92C0007DAEF /* DetailScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenViewModel.swift; sourceTree = "<group>"; };
 		AB91129B2912DB3E009FFE4C /* BasketScreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB91129C2912DB3E009FFE4C /* BasketScreenCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketScreenCollectionViewCell.xib; sourceTree = "<group>"; };
+		AB91129F291316C2009FFE4C /* BasketScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenViewModel.swift; sourceTree = "<group>"; };
 		ABA62CCD2912C767004ACCF7 /* BasketScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenViewController.swift; sourceTree = "<group>"; };
 		ABA62CCE2912C767004ACCF7 /* BasketScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketScreenViewController.xib; sourceTree = "<group>"; };
 		ABE4889E290707FD0065BCCA /* BazaarWay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BazaarWay.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -383,6 +385,7 @@
 		ABA62CCA2912C72E004ACCF7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				AB91129F291316C2009FFE4C /* BasketScreenViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -645,6 +648,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB59CB962911263F00DCEE8E /* DetailScreenViewController.swift in Sources */,
+				AB9112A0291316C2009FFE4C /* BasketScreenViewModel.swift in Sources */,
 				AB30261E290B0DBE00279201 /* AlertPresentable.swift in Sources */,
 				AB13047329098C7800A8BBA8 /* LaunchSplashViewController.swift in Sources */,
 				AB118EDC2909BDA2005DEA4E /* MainScreenViewModel.swift in Sources */,
@@ -811,6 +815,7 @@
 				INFOPLIST_FILE = BazaarWay/App/Plists/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -838,6 +843,7 @@
 				INFOPLIST_FILE = BazaarWay/App/Plists/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -30,9 +30,8 @@ class LaunchSplashViewController: UIViewController {
     }
     
     @objc func basketButton(){
-        let searchScreenViewModel = SearchScreenViewModel()
-        let searchScreenViewController = SearchScreenViewController(viewModel: searchScreenViewModel)
-        let basketScreenViewController = BasketScreenViewController(viewModel: searchScreenViewModel)
+        let basketScreenViewModel = BasketScreenViewModel()
+        let basketScreenViewController = BasketScreenViewController(viewModel: basketScreenViewModel)
         present(basketScreenViewController, animated: true, completion: nil)
         print("clicked")
     }
