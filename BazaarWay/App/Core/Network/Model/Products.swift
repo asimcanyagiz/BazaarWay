@@ -15,7 +15,7 @@ struct Products: Codable {
     let description: String
     let category: String
     let image: String
-    let rating: Rating
+    let rating: Rating?
 }
 extension Products {
     var imageURL: URL {
@@ -24,7 +24,7 @@ extension Products {
     
     var ratingToStar: String {
         var results = ""
-        for _ in 0...Int(rating.rate){
+        for _ in 0...Int(rating?.rate ?? 0){
             results.append("★")
         }
         if results.count < 5 {

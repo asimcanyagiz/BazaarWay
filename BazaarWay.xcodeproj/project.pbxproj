@@ -34,6 +34,7 @@
 		AB30263F290BE51F00279201 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AB30263E290BE51F00279201 /* Kingfisher */; };
 		AB59CB962911263F00DCEE8E /* DetailScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB59CB942911263F00DCEE8E /* DetailScreenViewController.swift */; };
 		AB59CB972911263F00DCEE8E /* DetailScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB59CB952911263F00DCEE8E /* DetailScreenViewController.xib */; };
+		AB5DD5C62911A92C0007DAEF /* DetailScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5DD5C52911A92C0007DAEF /* DetailScreenViewModel.swift */; };
 		ABE488A2290707FD0065BCCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE488A1290707FD0065BCCA /* AppDelegate.swift */; };
 		ABE488AC290707FD0065BCCA /* BazaarWay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABE488AA290707FD0065BCCA /* BazaarWay.xcdatamodeld */; };
 		ABE488AE290707FF0065BCCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABE488AD290707FF0065BCCA /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		AB30263A290BE39500279201 /* SearchScreenCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchScreenCollectionViewCell.xib; sourceTree = "<group>"; };
 		AB59CB942911263F00DCEE8E /* DetailScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenViewController.swift; sourceTree = "<group>"; };
 		AB59CB952911263F00DCEE8E /* DetailScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailScreenViewController.xib; sourceTree = "<group>"; };
+		AB5DD5C52911A92C0007DAEF /* DetailScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenViewModel.swift; sourceTree = "<group>"; };
 		ABE4889E290707FD0065BCCA /* BazaarWay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BazaarWay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE488A1290707FD0065BCCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABE488AB290707FD0065BCCA /* BazaarWay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BazaarWay.xcdatamodel; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 		AB59CB992911265400DCEE8E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				AB5DD5C52911A92C0007DAEF /* DetailScreenViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				ABE488CB29070F3F0065BCCA /* AuthViewModel.swift in Sources */,
 				ABE488C829070EF60065BCCA /* AuthViewController.swift in Sources */,
 				AB302626290B139300279201 /* SearchScreenViewController.swift in Sources */,
+				AB5DD5C62911A92C0007DAEF /* DetailScreenViewModel.swift in Sources */,
 				AB302633290BD51000279201 /* Products.swift in Sources */,
 				AB302629290B153300279201 /* SearchScreenViewModel.swift in Sources */,
 				ABE488CD29070F470065BCCA /* User.swift in Sources */,

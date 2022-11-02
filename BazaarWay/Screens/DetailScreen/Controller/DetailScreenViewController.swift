@@ -9,6 +9,20 @@ import UIKit
 
 final class DetailScreenViewController: UIViewController {
     
+    // MARK: - View Model
+    private let viewModel: DetailScreenViewModel
+    
+    // MARK: - Init
+    init(viewModel: DetailScreenViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     //MARK: - UI Elements
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productTitle: UILabel!
@@ -27,6 +41,8 @@ final class DetailScreenViewController: UIViewController {
         productPrice.text = "\(products?.price ?? 404)$"
         productRatingStar.text = products?.ratingToStar
         productDetail.text = products?.description
+        
+        
     }
     
     
@@ -38,6 +54,14 @@ final class DetailScreenViewController: UIViewController {
     
     
     @IBAction func didAddButtonPressed(_ sender: UIButton) {
+        viewModel.addBasket(productsData: products)
+        viewModel.getBasket { error in
+            if let error = error {
+//                self.showError(error)
+                print(error)
+            } else {
+            }
+        }
     }
     
     

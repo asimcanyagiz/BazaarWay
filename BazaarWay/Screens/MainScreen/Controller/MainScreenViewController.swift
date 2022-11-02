@@ -186,25 +186,26 @@ extension MainScreenViewController: UICollectionViewDelegate {
             guard let products = viewModel.productsForIndexPath(indexPath) else {
                 fatalError("Photo not found")
             }
-            
-            let detailScreenViewController = DetailScreenViewController()
+            let detailScreenViewModel = DetailScreenViewModel()
+            let detailScreenViewController = DetailScreenViewController(viewModel: detailScreenViewModel)
             detailScreenViewController.products = products
             present(detailScreenViewController, animated: true, completion: nil)
         } else if collectionView == self.collectionViewTop {
             guard let products = viewModel.productsForIndexPath2(indexPath) else {
                 fatalError("Photo not found")
             }
-            
-            let detailScreenViewController = DetailScreenViewController()
+            let detailScreenViewModel = DetailScreenViewModel()
+            let detailScreenViewController = DetailScreenViewController(viewModel: detailScreenViewModel)
             detailScreenViewController.products = products
             present(detailScreenViewController, animated: true, completion: nil)
         } else {
             guard let products = viewModel.productsForIndexPath2(indexPath) else {
                 fatalError("Photo not found")
             }
-            
-            let detailScreenViewController = DetailScreenViewController()
+            let detailScreenViewModel = DetailScreenViewModel()
+            let detailScreenViewController = DetailScreenViewController(viewModel: detailScreenViewModel)
             detailScreenViewController.products = products
+            
             present(detailScreenViewController, animated: true, completion: nil)
         }
         

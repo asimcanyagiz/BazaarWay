@@ -11,13 +11,21 @@ import Foundation
 struct User: Encodable {
     let username: String?
     let email: String?
-    let basket: [String]?
+    let basket: [Basket]?
 }
 
 extension User {
     init(from dict: [String: Any]) {
         username = dict["username"] as? String
         email = dict["email"] as? String
-        basket = dict["basket"] as? [String]
+        basket = dict["basket"] as? [Basket]
     }
+}
+struct Basket: Codable {
+    let id: Int
+    let title: String
+    let price: Double
+    let description: String
+    let category: String
+    let image: String
 }
