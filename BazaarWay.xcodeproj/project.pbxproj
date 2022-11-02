@@ -35,6 +35,10 @@
 		AB59CB962911263F00DCEE8E /* DetailScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB59CB942911263F00DCEE8E /* DetailScreenViewController.swift */; };
 		AB59CB972911263F00DCEE8E /* DetailScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB59CB952911263F00DCEE8E /* DetailScreenViewController.xib */; };
 		AB5DD5C62911A92C0007DAEF /* DetailScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5DD5C52911A92C0007DAEF /* DetailScreenViewModel.swift */; };
+		AB91129D2912DB3E009FFE4C /* BasketScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB91129B2912DB3E009FFE4C /* BasketScreenCollectionViewCell.swift */; };
+		AB91129E2912DB3E009FFE4C /* BasketScreenCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB91129C2912DB3E009FFE4C /* BasketScreenCollectionViewCell.xib */; };
+		ABA62CCF2912C767004ACCF7 /* BasketScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA62CCD2912C767004ACCF7 /* BasketScreenViewController.swift */; };
+		ABA62CD02912C767004ACCF7 /* BasketScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA62CCE2912C767004ACCF7 /* BasketScreenViewController.xib */; };
 		ABE488A2290707FD0065BCCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE488A1290707FD0065BCCA /* AppDelegate.swift */; };
 		ABE488AC290707FD0065BCCA /* BazaarWay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABE488AA290707FD0065BCCA /* BazaarWay.xcdatamodeld */; };
 		ABE488AE290707FF0065BCCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABE488AD290707FF0065BCCA /* Assets.xcassets */; };
@@ -71,6 +75,10 @@
 		AB59CB942911263F00DCEE8E /* DetailScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenViewController.swift; sourceTree = "<group>"; };
 		AB59CB952911263F00DCEE8E /* DetailScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailScreenViewController.xib; sourceTree = "<group>"; };
 		AB5DD5C52911A92C0007DAEF /* DetailScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenViewModel.swift; sourceTree = "<group>"; };
+		AB91129B2912DB3E009FFE4C /* BasketScreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenCollectionViewCell.swift; sourceTree = "<group>"; };
+		AB91129C2912DB3E009FFE4C /* BasketScreenCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketScreenCollectionViewCell.xib; sourceTree = "<group>"; };
+		ABA62CCD2912C767004ACCF7 /* BasketScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenViewController.swift; sourceTree = "<group>"; };
+		ABA62CCE2912C767004ACCF7 /* BasketScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketScreenViewController.xib; sourceTree = "<group>"; };
 		ABE4889E290707FD0065BCCA /* BazaarWay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BazaarWay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE488A1290707FD0065BCCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABE488AB290707FD0065BCCA /* BazaarWay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BazaarWay.xcdatamodel; sourceTree = "<group>"; };
@@ -344,6 +352,57 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		AB91129A2912DB27009FFE4C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AB91129B2912DB3E009FFE4C /* BasketScreenCollectionViewCell.swift */,
+				AB91129C2912DB3E009FFE4C /* BasketScreenCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		ABA62CC82912C718004ACCF7 /* BasketScreen */ = {
+			isa = PBXGroup;
+			children = (
+				ABA62CCC2912C746004ACCF7 /* Model */,
+				ABA62CCB2912C73F004ACCF7 /* View */,
+				ABA62CCA2912C72E004ACCF7 /* ViewModel */,
+				ABA62CC92912C728004ACCF7 /* Controller */,
+			);
+			path = BasketScreen;
+			sourceTree = "<group>";
+		};
+		ABA62CC92912C728004ACCF7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ABA62CCD2912C767004ACCF7 /* BasketScreenViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		ABA62CCA2912C72E004ACCF7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ABA62CCB2912C73F004ACCF7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB91129A2912DB27009FFE4C /* Cell */,
+				ABA62CCE2912C767004ACCF7 /* BasketScreenViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ABA62CCC2912C746004ACCF7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		ABE48895290707FD0065BCCA = {
 			isa = PBXGroup;
 			children = (
@@ -430,6 +489,7 @@
 		ABE488BF29070A280065BCCA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				ABA62CC82912C718004ACCF7 /* BasketScreen */,
 				AB59CB9329105DCF00DCEE8E /* DetailScreen */,
 				AB30261F290B135E00279201 /* SearchScreen */,
 				AB118EDD290AFCB5005DEA4E /* ProfileScreen */,
@@ -564,11 +624,13 @@
 				AB302619290B049F00279201 /* ProfileScreenViewController.xib in Resources */,
 				AB30263C290BE39500279201 /* SearchScreenCollectionViewCell.xib in Resources */,
 				AB13046029070FA900A8BBA8 /* AuthViewController.xib in Resources */,
+				AB91129E2912DB3E009FFE4C /* BasketScreenCollectionViewCell.xib in Resources */,
 				AB130462290719C000A8BBA8 /* GoogleService-Info.plist in Resources */,
 				ABE488B1290707FF0065BCCA /* LaunchScreen.storyboard in Resources */,
 				AB59CB972911263F00DCEE8E /* DetailScreenViewController.xib in Resources */,
 				AB302627290B139300279201 /* SearchScreenViewController.xib in Resources */,
 				ABF8078B290D8CE900E9E52E /* MainScreenCollectionViewCell.xib in Resources */,
+				ABA62CD02912C767004ACCF7 /* BasketScreenViewController.xib in Resources */,
 				AB13047429098C7800A8BBA8 /* LaunchSplashViewController.xib in Resources */,
 				ABE488AE290707FF0065BCCA /* Assets.xcassets in Resources */,
 				AB118EDA2909BD2A005DEA4E /* MainScreenViewController.xib in Resources */,
@@ -592,11 +654,13 @@
 				AB30261B290B051300279201 /* ProfileScreenViewModel.swift in Sources */,
 				ABE488CB29070F3F0065BCCA /* AuthViewModel.swift in Sources */,
 				ABE488C829070EF60065BCCA /* AuthViewController.swift in Sources */,
+				ABA62CCF2912C767004ACCF7 /* BasketScreenViewController.swift in Sources */,
 				AB302626290B139300279201 /* SearchScreenViewController.swift in Sources */,
 				AB5DD5C62911A92C0007DAEF /* DetailScreenViewModel.swift in Sources */,
 				AB302633290BD51000279201 /* Products.swift in Sources */,
 				AB302629290B153300279201 /* SearchScreenViewModel.swift in Sources */,
 				ABE488CD29070F470065BCCA /* User.swift in Sources */,
+				AB91129D2912DB3E009FFE4C /* BasketScreenCollectionViewCell.swift in Sources */,
 				AB118ED92909BD2A005DEA4E /* MainScreenViewController.swift in Sources */,
 				AB30263B290BE39500279201 /* SearchScreenCollectionViewCell.swift in Sources */,
 				AB13046F29072B7E00A8BBA8 /* Encodable+Extensions.swift in Sources */,

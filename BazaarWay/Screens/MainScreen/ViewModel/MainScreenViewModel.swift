@@ -33,19 +33,6 @@ final class MainScreenViewModel {
     }
     
     
-    //MARK: - Tabbar Setup
-    func setBasketButton(controller: UIViewController){
-        
-        let basketButtonImage = UIImage(systemName: "basket")
-        let basketBarButtonItem = UIBarButtonItem(image: basketButtonImage, style: .plain, target: self, action: #selector(basketButton))
-        basketBarButtonItem.tintColor = .black
-        
-        controller.tabBarController?.navigationItem.rightBarButtonItem = basketBarButtonItem
-    }
-    
-    @objc func basketButton(){
-         print("clicked")
-    }
     
    
     

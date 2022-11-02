@@ -48,7 +48,7 @@ final class MainScreenViewController: UIViewController {
         stackViewUIView.roundCorners(corners: [.topLeft, .topRight], radius: 30)
         
         
-        viewModel.setBasketButton(controller: self)
+//        viewModel.setBasketButton(controller: self)
         
         
         //collection delegates
@@ -94,13 +94,6 @@ final class MainScreenViewController: UIViewController {
         }
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        self.tabBarController?.navigationItem.rightBarButtonItem?.isHidden = true
-    }
-    
-    @objc func basketButton(){
-        print("clicked")
-    }
 }
 
 extension MainScreenViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
