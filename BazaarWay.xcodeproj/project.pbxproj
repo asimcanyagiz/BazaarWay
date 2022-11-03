@@ -38,6 +38,8 @@
 		AB91129D2912DB3E009FFE4C /* BasketScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB91129B2912DB3E009FFE4C /* BasketScreenCollectionViewCell.swift */; };
 		AB91129E2912DB3E009FFE4C /* BasketScreenCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB91129C2912DB3E009FFE4C /* BasketScreenCollectionViewCell.xib */; };
 		AB9112A0291316C2009FFE4C /* BasketScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB91129F291316C2009FFE4C /* BasketScreenViewModel.swift */; };
+		AB9112A329142BB1009FFE4C /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9112A229142BB1009FFE4C /* OnboardingViewController.swift */; };
+		AB9112A529142BDA009FFE4C /* PagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9112A429142BDA009FFE4C /* PagesViewController.swift */; };
 		ABA62CCF2912C767004ACCF7 /* BasketScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA62CCD2912C767004ACCF7 /* BasketScreenViewController.swift */; };
 		ABA62CD02912C767004ACCF7 /* BasketScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA62CCE2912C767004ACCF7 /* BasketScreenViewController.xib */; };
 		ABE488A2290707FD0065BCCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE488A1290707FD0065BCCA /* AppDelegate.swift */; };
@@ -79,6 +81,8 @@
 		AB91129B2912DB3E009FFE4C /* BasketScreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB91129C2912DB3E009FFE4C /* BasketScreenCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketScreenCollectionViewCell.xib; sourceTree = "<group>"; };
 		AB91129F291316C2009FFE4C /* BasketScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenViewModel.swift; sourceTree = "<group>"; };
+		AB9112A229142BB1009FFE4C /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		AB9112A429142BDA009FFE4C /* PagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesViewController.swift; sourceTree = "<group>"; };
 		ABA62CCD2912C767004ACCF7 /* BasketScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenViewController.swift; sourceTree = "<group>"; };
 		ABA62CCE2912C767004ACCF7 /* BasketScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketScreenViewController.xib; sourceTree = "<group>"; };
 		ABE4889E290707FD0065BCCA /* BazaarWay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BazaarWay.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -363,6 +367,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		AB9112A12913F18C009FFE4C /* OnboardingScreen */ = {
+			isa = PBXGroup;
+			children = (
+				AB9112A229142BB1009FFE4C /* OnboardingViewController.swift */,
+				AB9112A429142BDA009FFE4C /* PagesViewController.swift */,
+			);
+			path = OnboardingScreen;
+			sourceTree = "<group>";
+		};
 		ABA62CC82912C718004ACCF7 /* BasketScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +505,7 @@
 		ABE488BF29070A280065BCCA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				AB9112A12913F18C009FFE4C /* OnboardingScreen */,
 				ABA62CC82912C718004ACCF7 /* BasketScreen */,
 				AB59CB9329105DCF00DCEE8E /* DetailScreen */,
 				AB30261F290B135E00279201 /* SearchScreen */,
@@ -660,6 +674,7 @@
 				ABE488C829070EF60065BCCA /* AuthViewController.swift in Sources */,
 				ABA62CCF2912C767004ACCF7 /* BasketScreenViewController.swift in Sources */,
 				AB302626290B139300279201 /* SearchScreenViewController.swift in Sources */,
+				AB9112A329142BB1009FFE4C /* OnboardingViewController.swift in Sources */,
 				AB5DD5C62911A92C0007DAEF /* DetailScreenViewModel.swift in Sources */,
 				AB302633290BD51000279201 /* Products.swift in Sources */,
 				AB302629290B153300279201 /* SearchScreenViewModel.swift in Sources */,
@@ -667,6 +682,7 @@
 				AB91129D2912DB3E009FFE4C /* BasketScreenCollectionViewCell.swift in Sources */,
 				AB118ED92909BD2A005DEA4E /* MainScreenViewController.swift in Sources */,
 				AB30263B290BE39500279201 /* SearchScreenCollectionViewCell.swift in Sources */,
+				AB9112A529142BDA009FFE4C /* PagesViewController.swift in Sources */,
 				AB13046F29072B7E00A8BBA8 /* Encodable+Extensions.swift in Sources */,
 				AB118EE5290B03DD005DEA4E /* ProfileScreenViewController.swift in Sources */,
 				AB13046A2907285C00A8BBA8 /* UserDefaultConstants.swift in Sources */,
