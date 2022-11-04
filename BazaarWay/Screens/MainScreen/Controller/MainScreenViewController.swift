@@ -117,70 +117,106 @@ extension MainScreenViewController: UICollectionViewDelegateFlowLayout, UICollec
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if collectionView == self.collectionViewTodays {
+        switch collectionView {
+        case collectionViewTop:
             return viewModel.numberOfRows
+        case collectionViewJewelery:
+            return viewModel.numberOfRowsJewelery
+        case collectionViewElectronics:
+            return viewModel.numberOfRowsElectronics
+        case collectionViewMens:
+            return viewModel.numberOfRowsMens
+        case collectionViewWomens:
+            return viewModel.numberOfRowsWomens
+        case collectionViewTodays:
+            return viewModel.numberOfRows
+        default:
+            return 0
         }
-        print("========")
-        print(viewModel.numberOfRows2)
-        return viewModel.numberOfRows2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == self.collectionViewTodays {
-            let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as! MainScreenCollectionViewCell
-            
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as! MainScreenCollectionViewCell
+        
+        switch collectionView {
+        case collectionViewTop:
             // Set up cell
             guard let products = viewModel.productsForIndexPath(indexPath) else {
                 fatalError("Photo not found")
             }
-            
             //Catch photos with kingfisher
-            cellA.imageView.kf.setImage(with: products.imageURL)
-            cellA.titleLabel.text = products.title
-            cellA.priceLabel.text = "\(products.price)$"
+            cell.imageView.kf.setImage(with: products.imageURL)
+            cell.titleLabel.text = products.title
+            cell.priceLabel.text = "\(products.price)$"
             
-            return cellA
-        } else if collectionView == self.collectionViewTop {
-            let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as! MainScreenCollectionViewCell
-            
-            //             Set up cell
-            guard let products = viewModel.productsForIndexPath2(indexPath) else {
+            return cell
+        case collectionViewJewelery:
+            // Set up cell
+            guard let products = viewModel.productsForIndexPathJewelery(indexPath) else {
                 fatalError("Photo not found")
             }
-            
             //Catch photos with kingfisher
-            cellB.imageView.kf.setImage(with: products.imageURL)
-            cellB.titleLabel.text = products.title
-            cellB.priceLabel.text = "\(products.price)$"
+            cell.imageView.kf.setImage(with: products.imageURL)
+            cell.titleLabel.text = products.title
+            cell.priceLabel.text = "\(products.price)$"
             
-            
-            return cellB
-        } else {
-            let cellC = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as! MainScreenCollectionViewCell
-            
-            //             Set up cell
-            guard let products = viewModel.productsForIndexPath2(indexPath) else {
+            return cell
+        case collectionViewElectronics:
+            // Set up cell
+            guard let products = viewModel.productsForIndexPathElectronics(indexPath) else {
                 fatalError("Photo not found")
             }
-            
             //Catch photos with kingfisher
-            cellC.imageView.kf.setImage(with: products.imageURL)
-            cellC.titleLabel.text = products.title
-            cellC.priceLabel.text = "\(products.price)$"
+            cell.imageView.kf.setImage(with: products.imageURL)
+            cell.titleLabel.text = products.title
+            cell.priceLabel.text = "\(products.price)$"
             
+            return cell
+        case collectionViewMens:
+            // Set up cell
+            guard let products = viewModel.productsForIndexPathMens(indexPath) else {
+                fatalError("Photo not found")
+            }
+            //Catch photos with kingfisher
+            cell.imageView.kf.setImage(with: products.imageURL)
+            cell.titleLabel.text = products.title
+            cell.priceLabel.text = "\(products.price)$"
             
-            return cellC
+            return cell
+        case collectionViewWomens:
+            // Set up cell
+            guard let products = viewModel.productsForIndexPathWomens(indexPath) else {
+                fatalError("Photo not found")
+            }
+            //Catch photos with kingfisher
+            cell.imageView.kf.setImage(with: products.imageURL)
+            cell.titleLabel.text = products.title
+            cell.priceLabel.text = "\(products.price)$"
+            
+            return cell
+        case collectionViewTodays:
+            // Set up cell
+            guard let products = viewModel.productsForIndexPath(indexPath) else {
+                fatalError("Photo not found")
+            }
+            //Catch photos with kingfisher
+            cell.imageView.kf.setImage(with: products.imageURL)
+            cell.titleLabel.text = products.title
+            cell.priceLabel.text = "\(products.price)$"
+            
+            return cell
+        default:
+            return cell
         }
-        
     }
 }
 // MARK: - UICollectionViewDelegate
 extension MainScreenViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if collectionView == self.collectionViewTodays {
-            
-            // Set up cell
+        switch collectionView {
+        case collectionViewTop:
             guard let products = viewModel.productsForIndexPath(indexPath) else {
                 fatalError("Photo not found")
             }
@@ -188,22 +224,45 @@ extension MainScreenViewController: UICollectionViewDelegate {
             let detailScreenViewController = DetailScreenViewController(viewModel: detailScreenViewModel)
             detailScreenViewController.products = products
             present(detailScreenViewController, animated: true, completion: nil)
-        } else if collectionView == self.collectionViewTop {
-            guard let products = viewModel.productsForIndexPath2(indexPath) else {
+        case collectionViewJewelery:
+            guard let products = viewModel.productsForIndexPathJewelery(indexPath) else {
                 fatalError("Photo not found")
             }
             let detailScreenViewModel = DetailScreenViewModel()
             let detailScreenViewController = DetailScreenViewController(viewModel: detailScreenViewModel)
             detailScreenViewController.products = products
             present(detailScreenViewController, animated: true, completion: nil)
-        } else {
-            guard let products = viewModel.productsForIndexPath2(indexPath) else {
+        case collectionViewElectronics:
+            guard let products = viewModel.productsForIndexPathElectronics(indexPath) else {
                 fatalError("Photo not found")
             }
             let detailScreenViewModel = DetailScreenViewModel()
             let detailScreenViewController = DetailScreenViewController(viewModel: detailScreenViewModel)
             detailScreenViewController.products = products
-            
+            present(detailScreenViewController, animated: true, completion: nil)
+        case collectionViewMens:
+            guard let products = viewModel.productsForIndexPathMens(indexPath) else {
+                fatalError("Photo not found")
+            }
+            let detailScreenViewModel = DetailScreenViewModel()
+            let detailScreenViewController = DetailScreenViewController(viewModel: detailScreenViewModel)
+            detailScreenViewController.products = products
+            present(detailScreenViewController, animated: true, completion: nil)
+        case collectionViewWomens:
+            guard let products = viewModel.productsForIndexPathWomens(indexPath) else {
+                fatalError("Photo not found")
+            }
+            let detailScreenViewModel = DetailScreenViewModel()
+            let detailScreenViewController = DetailScreenViewController(viewModel: detailScreenViewModel)
+            detailScreenViewController.products = products
+            present(detailScreenViewController, animated: true, completion: nil)
+        default:
+            guard let products = viewModel.productsForIndexPath(indexPath) else {
+                fatalError("Photo not found")
+            }
+            let detailScreenViewModel = DetailScreenViewModel()
+            let detailScreenViewController = DetailScreenViewController(viewModel: detailScreenViewModel)
+            detailScreenViewController.products = products
             present(detailScreenViewController, animated: true, completion: nil)
         }
         
