@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BasketScreenViewController" customModule="BazaarWay" customModuleProvider="target">
             <connections>
+                <outlet property="closeButton" destination="PUq-FB-ZD7" id="tdX-xy-hDq"/>
                 <outlet property="collectionView" destination="WXc-jM-qrC" id="ssy-NH-Ypp"/>
                 <outlet property="purchaseButton" destination="i8h-b5-ft4" id="Q51-RB-THM"/>
                 <outlet property="totalCostLabel" destination="ly7-xc-xXX" id="Anf-LF-EOs"/>
@@ -69,6 +70,17 @@
                         <constraint firstAttribute="bottom" secondItem="WVq-ni-sN4" secondAttribute="bottom" id="qjX-TH-Rja"/>
                     </constraints>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUq-FB-ZD7">
+                    <rect key="frame" x="4" y="63" width="36.333333333333336" height="33.333333333333343"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="X">
+                        <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="16"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="didCloseButtonPressed:" destination="-1" eventType="touchUpInside" id="DoN-mC-bJR"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -77,8 +89,10 @@
                 <constraint firstItem="l0P-1S-KfD" firstAttribute="top" secondItem="WXc-jM-qrC" secondAttribute="bottom" constant="8" id="Gg6-M7-deK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="l0P-1S-KfD" secondAttribute="trailing" constant="32" id="NWx-VW-wBl"/>
                 <constraint firstItem="WXc-jM-qrC" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Rtk-aA-HWc"/>
+                <constraint firstItem="PUq-FB-ZD7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="4" id="h3E-5a-fgL"/>
                 <constraint firstItem="WXc-jM-qrC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="rNc-6y-Oir"/>
                 <constraint firstItem="WXc-jM-qrC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uxS-MR-Nb5"/>
+                <constraint firstItem="PUq-FB-ZD7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="4" id="vvn-9p-wcU"/>
                 <constraint firstItem="l0P-1S-KfD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="wjs-K5-NP5"/>
             </constraints>
             <point key="canvasLocation" x="142.74809160305344" y="-16.197183098591552"/>

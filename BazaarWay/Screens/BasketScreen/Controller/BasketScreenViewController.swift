@@ -28,7 +28,7 @@ final class BasketScreenViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var totalCostLabel: UILabel!
     @IBOutlet weak var purchaseButton: UIButton!
-    
+    @IBOutlet weak var closeButton: UIButton!
     
     
     
@@ -59,7 +59,17 @@ final class BasketScreenViewController: UIViewController {
                 print(String(describing: error))
             }
         }
+        
+        closeButton.layer.cornerRadius = closeButton.frame.size.width / 2
+        closeButton.clipsToBounds = true
     }
+    
+    
+    
+    @IBAction func didCloseButtonPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
 }
 

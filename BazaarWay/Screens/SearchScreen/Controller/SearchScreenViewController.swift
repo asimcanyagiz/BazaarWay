@@ -81,7 +81,7 @@ extension SearchScreenViewController: UICollectionViewDelegateFlowLayout {
         let screenWidth = UIScreen.main.bounds.width
         let widthScaleFactor = (screenWidth / 2) - 6
         let screenHeight = UIScreen.main.bounds.height
-        let heightScaleFactor = screenHeight / 3
+        let heightScaleFactor = screenHeight / 4
         
         return CGSize(width: widthScaleFactor, height: heightScaleFactor)
     }

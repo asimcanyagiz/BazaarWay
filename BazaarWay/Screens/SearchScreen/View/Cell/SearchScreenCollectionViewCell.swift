@@ -13,20 +13,18 @@ class SearchScreenCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var rateLabel: UILabel!
-    @IBOutlet weak var addButton: UIButton!
+    
+    @IBOutlet weak var imagesView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        addButton.titleLabel?.text = "Add to Cart"
-        addButton.setImage(UIImage(systemName: "cart.badge.plus"), for: .normal)
         
         //Customize ImageBorder
-        imageViewCell.translatesAutoresizingMaskIntoConstraints = false
-        imageViewCell.clipsToBounds = true
-        imageViewCell.layer.cornerRadius = 12
-        imageViewCell.layer.borderWidth = 1
-        imageViewCell.layer.borderColor = UIColor.lightGray.cgColor
+        imagesView.translatesAutoresizingMaskIntoConstraints = false
+        imagesView.clipsToBounds = true
+        imagesView.layer.cornerRadius = 12
+        imagesView.layer.borderWidth = 1
+        imagesView.layer.borderColor = UIColor.lightGray.cgColor
     }
 
 }

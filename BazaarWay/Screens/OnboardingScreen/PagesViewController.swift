@@ -6,18 +6,19 @@
 //
 
 import UIKit
+import Lottie
 
 final class PagesViewController: UIViewController {
-
+    
     let stackView = UIStackView()
     
-    let imageView = UIImageView()
+    var animationView = LottieAnimationView()
     let titleLabel = UILabel()
     let subtitleLabel = UILabel()
     
-    init(imageName: String, titleText: String, subtitleText: String) {
+    init(animationName: String, titleText: String, subtitleText: String) {
         super.init(nibName: nil, bundle: nil)
-        imageView.image = UIImage(named: imageName)
+        animationView = .init(name: animationName)
         titleLabel.text = titleText
         subtitleLabel.text = subtitleText
     }
@@ -30,6 +31,7 @@ final class PagesViewController: UIViewController {
         super.viewDidLoad()
         style()
         layout()
+        
         view.backgroundColor = .systemRed
     }
 }
@@ -42,8 +44,13 @@ extension PagesViewController {
         stackView.alignment = .center
         stackView.spacing = 20
         
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        animationView.frame = view.bounds
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.animationSpeed = 0.5
+        animationView.play()
+        animationView.backgroundBehavior = .pauseAndRestore
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.font = UIFont.preferredFont(forTextStyle: .title1)
@@ -56,9 +63,9 @@ extension PagesViewController {
         
         subtitleLabel.numberOfLines = 0
     }
-        
+    
     func layout() {
-        stackView.addArrangedSubview(imageView)
+        stackView.addArrangedSubview(animationView)
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(subtitleLabel)
         
@@ -68,7 +75,7 @@ extension PagesViewController {
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             
-            imageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
+            animationView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
             
             subtitleLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: subtitleLabel.trailingAnchor, multiplier: 2),

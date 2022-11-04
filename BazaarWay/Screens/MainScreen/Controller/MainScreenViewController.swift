@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 final class MainScreenViewController: UIViewController {
     
@@ -36,19 +37,23 @@ final class MainScreenViewController: UIViewController {
     
     //MARK: - Stack View
     
-    @IBOutlet weak var stackViewButtons: UIStackView!
     
-    @IBOutlet weak var stackViewUIView: UIView!
-    
-    
-    
+    @IBOutlet weak var animationStack: UIStackView!
+    var animationView = LottieAnimationView()
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        stackViewUIView.roundCorners(corners: [.topLeft, .topRight], radius: 30)
+        //        stackViewUIView.roundCorners(corners: [.topLeft, .topRight], radius: 30)
         
-        
-//        viewModel.setBasketButton(controller: self)
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        animationView.frame = view.bounds
+        animationView = .init(name: "productsShop")
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.animationSpeed = 0.5
+        animationView.play()
+        animationView.backgroundBehavior = .pauseAndRestore
+        animationStack.addArrangedSubview(animationView)
         
         
         //collection delegates

@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import Lottie
 
 class ProfileScreenViewController: UIViewController, AlertPresentable {
     
@@ -15,10 +16,8 @@ class ProfileScreenViewController: UIViewController, AlertPresentable {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var logButton: UIButton!
-    
-    
+    @IBOutlet weak var animationHolderStackView: UIStackView!
     
     // MARK: - View Model
     private let viewModel: ProfileScreenViewModel
@@ -39,6 +38,8 @@ class ProfileScreenViewController: UIViewController, AlertPresentable {
         super.viewDidLoad()
 
         viewModel.userStatus(controller: self)
+        
+        setAnimation()
     }
     override func viewWillAppear(_ animated: Bool) {
 
@@ -55,6 +56,20 @@ class ProfileScreenViewController: UIViewController, AlertPresentable {
         }
     }
     
+    func setAnimation(){
+        var animationView = LottieAnimationView()
+        
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        animationView.frame = view.bounds
+        animationView = .init(name: "profile")
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.animationSpeed = 0.5
+        animationView.play()
+        animationView.backgroundBehavior = .pauseAndRestore
+        
+        animationHolderStackView.addArrangedSubview(animationView)
+    }
     
 
 }

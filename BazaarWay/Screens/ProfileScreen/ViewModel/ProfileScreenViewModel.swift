@@ -21,7 +21,6 @@ final class ProfileScreenViewModel {
                 try Auth.auth().signOut()
                 print("succesfully logout")
                 controller.logButton.setTitle("Log In",for:.normal)
-//                controller.navigationController?.popToRootViewController(animated: true)
             } catch {
                 controller.showError(error)
             }

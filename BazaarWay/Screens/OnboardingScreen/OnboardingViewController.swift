@@ -35,10 +35,9 @@ final class OnboardingViewController: UIPageViewController {
         let basketScreenViewModel = BasketScreenViewModel()
         let basketScreenViewController = BasketScreenViewController(viewModel: basketScreenViewModel)
         present(basketScreenViewController, animated: true, completion: nil)
-        print("clicked")
     }
     
-
+    
     @objc func setScreenTransfer(){
         let mainScreenViewModel = MainScreenViewModel()
         let mainScreenViewController = MainScreenViewController(viewModel: mainScreenViewModel)
@@ -53,12 +52,15 @@ final class OnboardingViewController: UIPageViewController {
         profileScreenViewController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person"))
         tabBarController.viewControllers = [mainScreenViewController, searchScreenViewController, profileScreenViewController]
         
-        let basketButtonImage = UIImage(systemName: "basket")
+        let basketButtonImage = UIImage(systemName: "cart.fill")
         let basketBarButtonItem = UIBarButtonItem(image: basketButtonImage, style: .plain, target: self, action: #selector(basketButton))
-        basketBarButtonItem.tintColor = .black
+        basketBarButtonItem.tintColor = .white
         
         tabBarController.navigationItem.rightBarButtonItem = basketBarButtonItem
         
+        
+
+
         tabBarController.navigationItem.hidesBackButton = true
         self.navigationController?.pushViewController(tabBarController, animated: true)
     }
@@ -74,15 +76,15 @@ extension OnboardingViewController {
         
         pageControl.addTarget(self, action: #selector(pageControlTapped(_:)), for: .valueChanged)
         
-        let page1 = PagesViewController(imageName: "",
-                                             titleText: "Welcome to BazaarWay",
-                                             subtitleText: "Your place for good deal in bazaar with online shopping app BazaarWay.")
-        let page2 = PagesViewController(imageName: "",
-                                             titleText: "Welcome to BazaarWay",
-                                             subtitleText: "Your place for good deal in bazaar with online shopping app BazaarWay.")
-        let page3 = PagesViewController(imageName: "",
-                                             titleText: "Welcome to BazaarWay",
-                                             subtitleText: "Your place for good deal in bazaar with online shopping app BazaarWay.")
+        let page1 = PagesViewController(animationName: "shop",
+                                        titleText: "Welcome to BazaarWay",
+                                        subtitleText: "Your place for good deal in bazaar with online shopping app BazaarWay.")
+        let page2 = PagesViewController(animationName: "search",
+                                        titleText: "Welcome to BazaarWay",
+                                        subtitleText: "Your place for good deal in bazaar with online shopping app BazaarWay.")
+        let page3 = PagesViewController(animationName: "buy",
+                                        titleText: "Welcome to BazaarWay",
+                                        subtitleText: "Your place for good deal in bazaar with online shopping app BazaarWay.")
         
         pages.append(page1)
         pages.append(page2)
@@ -128,7 +130,7 @@ extension OnboardingViewController {
         skipButtonTopAnchor = skipButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 1)
         nextButtonTopAnchor = nextButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 1)
         pageControlBottomAnchor = view.bottomAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 2)
-
+        
         skipButtonTopAnchor?.isActive = true
         nextButtonTopAnchor?.isActive = true
         pageControlBottomAnchor?.isActive = true
@@ -194,14 +196,13 @@ extension OnboardingViewController {
         let lastPageIndex = pages.count - 1
         
         if pageControl.currentPage + 1 == lastPageIndex {
-            nextButton.setTitle("Done", for: .normal)
+            nextButton.setTitle("Finish", for: .normal)
             skipButton.isHidden = true
             nextButton.addTarget(self, action: #selector(skipTapped(_:)), for: .primaryActionTriggered)
-            
-        } else {
-            pageControl.currentPage += 1
-            goToNextPage()
         }
+        goToNextPage()
+        
+        pageControl.currentPage += 1
     }
 }
 

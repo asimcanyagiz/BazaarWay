@@ -13,21 +13,23 @@ class MainScreenCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     
+    @IBOutlet weak var cellStackView: UIStackView!
     
     @IBOutlet weak var priceLabel: UILabel!
     
-
+    @IBOutlet weak var imagesView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
         //Customize Cell
         //Customize ImageBorder
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 12
-        imageView.layer.borderWidth = 1
-        imageView.layer.borderColor = UIColor.lightGray.cgColor
+        imagesView.translatesAutoresizingMaskIntoConstraints = false
+        imagesView.clipsToBounds = true
+        cellStackView.layer.cornerRadius = 12
+        cellStackView.layer.borderWidth = 1
+        cellStackView.layer.borderColor = UIColor.lightGray.cgColor
     }
 
 }
