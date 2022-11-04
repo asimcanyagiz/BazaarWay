@@ -88,7 +88,14 @@ extension SearchScreenViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension SearchScreenViewController: UICollectionViewDelegate {
-    func tableView(_ collectionView: UICollectionView, didSelectRowAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let products = viewModel.productsForIndexPath(indexPath) else {
+            fatalError("Photo not found")
+        }
+        let detailScreenViewModel = DetailScreenViewModel()
+        let detailScreenViewController = DetailScreenViewController(viewModel: detailScreenViewModel)
+        detailScreenViewController.products = products
+        present(detailScreenViewController, animated: true, completion: nil)
     }
 }
 

@@ -71,19 +71,19 @@ final class MainScreenViewModel {
         products?[indexPath.row]
     }
     func productsForIndexPathJewelery(_ indexPath: IndexPath) -> Products? {
-        let products2 = products?.filter({ $0.category.hasPrefix("jewelery")})
-        return products2?[indexPath.row]
+        let products = products?.filter({ $0.category.hasPrefix("jewelery")})
+        return products?[indexPath.row]
     }
     func productsForIndexPathElectronics(_ indexPath: IndexPath) -> Products? {
-        let products2 = products?.filter({ $0.category.hasPrefix("electronics")})
-        return products2?[indexPath.row]
+        let products = products?.filter({ $0.category.hasPrefix("electronics")})
+        return products?[indexPath.row]
     }
     func productsForIndexPathMens(_ indexPath: IndexPath) -> Products? {
-        let products2 = products?.filter({ $0.category.hasPrefix("men's clothing")})
-        return products2?[indexPath.row]
+        let products = products?.filter({ $0.category.hasPrefix("men's clothing")})
+        return products?[indexPath.row]
     }
     func productsForIndexPathWomens(_ indexPath: IndexPath) -> Products? {
-        let products2 = products?.filter({ $0.category.hasPrefix("women's clothing")})
-        return products2?[indexPath.row]
+        let products = products?.filter({ $0.category.hasPrefix("women's clothing")})
+        return products?[indexPath.row]
     }
 }

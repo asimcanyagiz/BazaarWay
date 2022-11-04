@@ -37,4 +37,9 @@ extension AlertPresentable where Self: UIViewController {
         showAlert(title: "Error Occurred",
                   message: error.localizedDescription)
     }
+    
+    func showSuccess(){
+        showAlert(title: "Succes",
+                  message: "Deleted from basket")
+    }
 }

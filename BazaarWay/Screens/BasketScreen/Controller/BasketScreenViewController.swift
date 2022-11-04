@@ -7,8 +7,13 @@
 
 import UIKit
 import Kingfisher
+import FirebaseFirestore
 
-final class BasketScreenViewController: UIViewController {
+final class BasketScreenViewController: UIViewController, AlertPresentable {
+    
+    //MARK: - Firebase Connect
+    private let db = Firestore.firestore()
+    private let defaults = UserDefaults.standard
     
     // MARK: - View Model
     private let viewModel: BasketScreenViewModel
@@ -37,6 +42,10 @@ final class BasketScreenViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadingData), name: Notification.Name("reloadData"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showAlertForTime), name: Notification.Name("sendAlert"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateBasket), name: Notification.Name("updateData"), object: nil)
+        
         //collection delegates
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -47,9 +56,9 @@ final class BasketScreenViewController: UIViewController {
         viewModel.getBasket { error in
             if let error = error {
                 print(error)
-            } else {
             }
         }
+        
         viewModel.changeHandler = { change in
             switch change {
             case .didFetchBasket:
@@ -64,10 +73,50 @@ final class BasketScreenViewController: UIViewController {
         closeButton.clipsToBounds = true
     }
     
+    @objc func showAlertForTime (notification: NSNotification){
+        self.showSuccess()
+    }
+    
+    @objc func reloadingData (notification: NSNotification){
+        viewModel.getBasket { error in
+            if let error = error {
+                print(error)
+            }
+        }
+        
+    }
+
+    
     
     
     @IBAction func didCloseButtonPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func updateBasket(_ notification: NSNotification){
+        guard let products = viewModel.productsForIndexPath(notification.userInfo!["index"] as! IndexPath) else {
+            fatalError("Product not found")
+        }
+        
+        let basketProduct = [
+            "id": products["id"]!,
+            "title": products["title"]!,
+            "price": products["price"]!,
+            "description": products["description"]!,
+            "category": products["category"]!,
+            "image": products["image"]!,
+            "quantity": notification.userInfo!["quantityNumber"] as Any
+        ] as [String : Any]?
+        
+        guard let id = basketProduct,
+              let uid = defaults.string(forKey: UserDefaultConstants.uid.rawValue) else {
+            return
+        }
+        viewModel.checkBasket(basketProductTitle: products["title"]! as! String, newProductId: id)
+        
+        db.collection("users").document(uid).updateData([
+            "basket": FieldValue.arrayUnion([id])
+        ])
     }
     
     
@@ -102,13 +151,17 @@ extension BasketScreenViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! BasketScreenCollectionViewCell
         
         guard let products = viewModel.productsForIndexPath(indexPath) else {
-            fatalError("Photo not found")
+            fatalError("Product not found")
         }
         
         //We use ! because already data
         cell.imageView.kf.setImage(with: URL(string: products["image"] as! String))
         cell.titleLabel.text = "\(products["title"]!)"
         cell.priceLabel.text = "\(products["price"]!)$"
+        cell.quantityLabel.text = "\(products["quantity"]!)"
+        cell.quantityStepperValue.value = products["quantity"] as! Double
+        
+        cell.index = indexPath
         
         return cell
     }

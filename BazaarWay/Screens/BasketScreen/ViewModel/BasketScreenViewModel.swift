@@ -24,8 +24,6 @@ final class BasketScreenViewModel: UserDefaultsAccessible {
     private let defaults = UserDefaults.standard
     
     //MARK: - Get Basket
-//    var basketList = [[String:Any]]()
-    
     internal var basketList: [[String:Any]]? {
         didSet {
             self.changeHandler?(.didFetchBasket)
@@ -49,6 +47,111 @@ final class BasketScreenViewModel: UserDefaultsAccessible {
         }
     }
     
+    
+    func removeBasket(basketProductTitle: String){
+        
+        guard let uid = uid else {
+            return
+        }
+        
+        db.runTransaction { (trans, errorPointer) -> Any? in
+            let doc: DocumentSnapshot
+            let docRef = self.db.collection("users").document(uid)
+            
+            // get the document
+            do {
+                try doc = trans.getDocument(docRef)
+            } catch let error as NSError {
+                errorPointer?.pointee = error
+                return nil
+            }
+            
+            // get the items from the document
+            if let items = doc.get("basket") as? [[String: Any]] {
+                
+                // find the element to delete
+                if let toDelete = items.first(where: { (element) -> Bool in
+                    
+                    // the predicate for finding the element
+                    if let title = element["title"] as? String,
+                       title == basketProductTitle {
+                        return true
+                    } else {
+                        return false
+                    }
+                }) {
+                    // element found, remove it
+                    docRef.updateData([
+                        "basket": FieldValue.arrayRemove([toDelete])
+                    ])
+                }
+            } else {
+                // array itself not found
+                print("items not found")
+            }
+            return nil // you can return things out of transactions but not needed here so return nil
+        } completion: { (_, error) in
+            if let error = error {
+                print(error)
+            } else {
+                NotificationCenter.default.post(name: Notification.Name("reloadData"), object: nil)
+            }
+        }
+    }
+    
+    func checkBasket(basketProductTitle: String, newProductId: Any){
+        
+        guard let uid = uid else {
+            return
+        }
+        
+        db.runTransaction { (trans, errorPointer) -> Any? in
+            let doc: DocumentSnapshot
+            let docRef = self.db.collection("users").document(uid)
+            
+            // get the document
+            do {
+                try doc = trans.getDocument(docRef)
+            } catch let error as NSError {
+                errorPointer?.pointee = error
+                return nil
+            }
+            
+            // get the items from the document
+            if let items = doc.get("basket") as? [[String: Any]] {
+                
+                // find the element to delete
+                if let toDelete = items.first(where: { (element) -> Bool in
+                    
+                    // the predicate for finding the element
+                    if let title = element["title"] as? String,
+                       title == basketProductTitle {
+                        return true
+                    } else {
+                        return false
+                    }
+                }) {
+                    // element found, remove it
+                    docRef.updateData([
+                        "basket": FieldValue.arrayRemove([toDelete])
+                    ])
+                }
+            } else {
+                // array itself not found
+                print("items not found")
+            }
+            return nil // you can return things out of transactions but not needed here so return nil
+        } completion: { (_, error) in
+            if let error = error {
+                print(error)
+            } else {
+                self.db.collection("users").document(uid).updateData([
+                    "basket": FieldValue.arrayUnion([newProductId])
+                ])
+            }
+        }
+    }
+    
     //Call the current photo
     func productsForIndexPath(_ indexPath: IndexPath) -> [String : Any]? {
         return basketList?[indexPath.row]
@@ -57,6 +160,6 @@ final class BasketScreenViewModel: UserDefaultsAccessible {
     var numberOfRows: Int {
         basketList?.count ?? .zero
     }
-
+    
     
 }

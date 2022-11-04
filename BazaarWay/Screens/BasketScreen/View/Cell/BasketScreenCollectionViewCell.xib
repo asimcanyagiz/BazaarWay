@@ -126,6 +126,7 @@
                 <outlet property="imageView" destination="7Jw-Y6-3BQ" id="thZ-dq-GKS"/>
                 <outlet property="priceLabel" destination="bBE-9W-8yA" id="OJo-Na-n0Q"/>
                 <outlet property="quantityLabel" destination="fgj-rl-eMI" id="LMZ-db-1Xo"/>
+                <outlet property="quantityStepperValue" destination="U9Q-JD-jLQ" id="P0p-iJ-gQl"/>
                 <outlet property="titleLabel" destination="Wzi-PO-14D" id="9ZC-6E-y7x"/>
             </connections>
             <point key="canvasLocation" x="451.90839694656489" y="-41.197183098591552"/>

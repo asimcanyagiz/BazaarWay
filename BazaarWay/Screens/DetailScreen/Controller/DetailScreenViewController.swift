@@ -31,6 +31,7 @@ final class DetailScreenViewController: UIViewController {
     @IBOutlet weak var productDetail: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
     
+    var quantity = 1
     
     //MARK: - Product Data Set
     var products: Products?
@@ -43,22 +44,23 @@ final class DetailScreenViewController: UIViewController {
         productRatingStar.text = products?.ratingToStar
         productDetail.text = products?.description
         
+        quantity = Int(quantityLabel.text!)!
+        
         closeButton.layer.cornerRadius = closeButton.frame.size.width / 2
         closeButton.clipsToBounds = true
-        
         
     }
     
     
-    
     @IBAction func didStepperPressed(_ sender: UIStepper) {
         quantityLabel.text = String(sender.value)
+        quantity = Int(sender.value)
     }
     
     
     
     @IBAction func didAddButtonPressed(_ sender: UIButton) {
-        viewModel.addBasket(productsData: products)
+        viewModel.addBasket(productsData: products, quantity: quantity)
         
     }
     
