@@ -36,12 +36,13 @@ final class BasketScreenViewController: UIViewController, AlertPresentable {
     @IBOutlet weak var closeButton: UIButton!
     
     
-    
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         
+        //Notifications from other pages
         NotificationCenter.default.addObserver(self, selector: #selector(reloadingData), name: Notification.Name("reloadData"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showAlertForTime), name: Notification.Name("sendAlert"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateBasket), name: Notification.Name("updateData"), object: nil)
@@ -50,15 +51,14 @@ final class BasketScreenViewController: UIViewController, AlertPresentable {
         collectionView.dataSource = self
         collectionView.delegate = self
         let nib = UINib(nibName: "BasketScreenCollectionViewCell", bundle: nil)
-        
         collectionView.register(nib, forCellWithReuseIdentifier: "cell")
         
+        //Enums
         viewModel.getBasket { error in
             if let error = error {
                 print(error)
             }
         }
-        
         viewModel.changeHandler = { change in
             switch change {
             case .didFetchBasket:
@@ -70,11 +70,13 @@ final class BasketScreenViewController: UIViewController, AlertPresentable {
             }
         }
         
+        //UI changes
         closeButton.layer.cornerRadius = closeButton.frame.size.width / 2
         closeButton.clipsToBounds = true
         totalCostLabel.text = viewModel.totalCost()
     }
     
+    //MARK: - Functions
     @objc func showAlertForTime (notification: NSNotification){
         self.showSuccess(informMessage: "Succesfully product removed from basket!")
         self.totalCostLabel.text = self.viewModel.totalCost()
@@ -86,19 +88,17 @@ final class BasketScreenViewController: UIViewController, AlertPresentable {
                 print(error)
             }
         }
-        
     }
 
-    
     @IBAction func didPurchaseButtonPressed(_ sender: UIButton) {
         self.showSuccess(informMessage: "This option will be avaible soon!")
     }
-    
     
     @IBAction func didCloseButtonPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    //Function for when quantity stepper pressed we update the product
     @objc func updateBasket(_ notification: NSNotification){
         guard let products = viewModel.productsForIndexPath(notification.userInfo!["index"] as! IndexPath) else {
             fatalError("Product not found")
@@ -125,6 +125,7 @@ final class BasketScreenViewController: UIViewController, AlertPresentable {
         ])
         
         self.totalCostLabel.text = self.viewModel.totalCost()
+        //We use this alerts for take a time from user so data can be reload succesfully because firebase sometimes work slowly
         self.showSuccess(informMessage: "Succesfully basket updated for see the changes reopen the basket")
         _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
             if UIViewController.self != BasketScreenViewModel.self {

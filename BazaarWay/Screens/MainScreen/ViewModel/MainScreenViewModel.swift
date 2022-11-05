@@ -44,10 +44,6 @@ final class MainScreenViewModel {
         return products2?.count ?? .zero
     }
     
-    
-    
-   
-    
     //MARK: - Functions
     //Fetch the photos from api
     func fetchProducts(categoryText: String = "All") {

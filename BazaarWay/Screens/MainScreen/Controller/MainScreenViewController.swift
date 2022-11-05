@@ -25,35 +25,20 @@ final class MainScreenViewController: UIViewController {
     }
     
     //MARK: - CollectionViews
-    
-    
     @IBOutlet weak var collectionViewTop: UICollectionView!
     @IBOutlet weak var collectionViewJewelery: UICollectionView!
     @IBOutlet weak var collectionViewElectronics: UICollectionView!
     @IBOutlet weak var collectionViewMens: UICollectionView!
     @IBOutlet weak var collectionViewWomens: UICollectionView!
     @IBOutlet weak var collectionViewTodays: UICollectionView!
-    
-    
-    //MARK: - Stack View
-    
-    
     @IBOutlet weak var animationStack: UIStackView!
-    var animationView = LottieAnimationView()
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        stackViewUIView.roundCorners(corners: [.topLeft, .topRight], radius: 30)
         
-        animationView.translatesAutoresizingMaskIntoConstraints = false
-        animationView.frame = view.bounds
-        animationView = .init(name: "productsShop")
-        animationView.contentMode = .scaleAspectFit
-        animationView.loopMode = .loop
-        animationView.animationSpeed = 0.5
-        animationView.play()
-        animationView.backgroundBehavior = .pauseAndRestore
-        animationStack.addArrangedSubview(animationView)
+        setAnimation()
+        
         
         
         //collection delegates
@@ -99,8 +84,25 @@ final class MainScreenViewController: UIViewController {
         }
     }
     
+    func setAnimation(){
+        var animationView = LottieAnimationView()
+        
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        animationView.frame = view.bounds
+        animationView = .init(name: "productsShop")
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.animationSpeed = 0.5
+        animationView.play()
+        animationView.backgroundBehavior = .pauseAndRestore
+        
+        animationStack.addArrangedSubview(animationView)
+    }
+    
 }
 
+
+//MARK: - Delegates
 extension MainScreenViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

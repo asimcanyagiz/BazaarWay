@@ -21,6 +21,7 @@
 		AB13046F29072B7E00A8BBA8 /* Encodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB13046E29072B7E00A8BBA8 /* Encodable+Extensions.swift */; };
 		AB13047329098C7800A8BBA8 /* LaunchSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB13047129098C7800A8BBA8 /* LaunchSplashViewController.swift */; };
 		AB13047429098C7800A8BBA8 /* LaunchSplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB13047229098C7800A8BBA8 /* LaunchSplashViewController.xib */; };
+		AB1C6B3B2916EB410082FCBD /* auth.json in Resources */ = {isa = PBXBuildFile; fileRef = AB1C6B3A2916EB410082FCBD /* auth.json */; };
 		AB302619290B049F00279201 /* ProfileScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB302618290B049F00279201 /* ProfileScreenViewController.xib */; };
 		AB30261B290B051300279201 /* ProfileScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB30261A290B051300279201 /* ProfileScreenViewModel.swift */; };
 		AB30261E290B0DBE00279201 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB30261D290B0DBE00279201 /* AlertPresentable.swift */; };
@@ -36,6 +37,7 @@
 		AB59CB962911263F00DCEE8E /* DetailScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB59CB942911263F00DCEE8E /* DetailScreenViewController.swift */; };
 		AB59CB972911263F00DCEE8E /* DetailScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB59CB952911263F00DCEE8E /* DetailScreenViewController.xib */; };
 		AB5DD5C62911A92C0007DAEF /* DetailScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5DD5C52911A92C0007DAEF /* DetailScreenViewModel.swift */; };
+		AB65B89B2916D7B700F49FF7 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AB65B89A2916D7B700F49FF7 /* IQKeyboardManagerSwift */; };
 		AB91129D2912DB3E009FFE4C /* BasketScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB91129B2912DB3E009FFE4C /* BasketScreenCollectionViewCell.swift */; };
 		AB91129E2912DB3E009FFE4C /* BasketScreenCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB91129C2912DB3E009FFE4C /* BasketScreenCollectionViewCell.xib */; };
 		AB9112A0291316C2009FFE4C /* BasketScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB91129F291316C2009FFE4C /* BasketScreenViewModel.swift */; };
@@ -59,18 +61,10 @@
 		ABF8078B290D8CE900E9E52E /* MainScreenCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABF80789290D8CE900E9E52E /* MainScreenCollectionViewCell.xib */; };
 		ABF9A520291677BE00B551F9 /* BazaarWayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF9A51F291677BE00B551F9 /* BazaarWayUITests.swift */; };
 		ABF9A522291677BE00B551F9 /* BazaarWayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF9A521291677BE00B551F9 /* BazaarWayUITestsLaunchTests.swift */; };
-		ABF9A52F291677CA00B551F9 /* BazaarWayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF9A52E291677CA00B551F9 /* BazaarWayTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		ABF9A523291677BE00B551F9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ABE48896290707FD0065BCCA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ABE4889D290707FD0065BCCA;
-			remoteInfo = BazaarWay;
-		};
-		ABF9A530291677CA00B551F9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ABE48896290707FD0065BCCA /* Project object */;
 			proxyType = 1;
@@ -92,6 +86,7 @@
 		AB13046E29072B7E00A8BBA8 /* Encodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extensions.swift"; sourceTree = "<group>"; };
 		AB13047129098C7800A8BBA8 /* LaunchSplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSplashViewController.swift; sourceTree = "<group>"; };
 		AB13047229098C7800A8BBA8 /* LaunchSplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchSplashViewController.xib; sourceTree = "<group>"; };
+		AB1C6B3A2916EB410082FCBD /* auth.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = auth.json; sourceTree = "<group>"; };
 		AB302618290B049F00279201 /* ProfileScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileScreenViewController.xib; sourceTree = "<group>"; };
 		AB30261A290B051300279201 /* ProfileScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewModel.swift; sourceTree = "<group>"; };
 		AB30261D290B0DBE00279201 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
@@ -130,8 +125,6 @@
 		ABF9A51D291677BE00B551F9 /* BazaarWayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BazaarWayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABF9A51F291677BE00B551F9 /* BazaarWayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BazaarWayUITests.swift; sourceTree = "<group>"; };
 		ABF9A521291677BE00B551F9 /* BazaarWayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BazaarWayUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		ABF9A52C291677CA00B551F9 /* BazaarWayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BazaarWayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABF9A52E291677CA00B551F9 /* BazaarWayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BazaarWayTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,17 +137,11 @@
 				AB13046529071AD600A8BBA8 /* FirebaseAuth in Frameworks */,
 				AB13046729071AD600A8BBA8 /* FirebaseFirestore in Frameworks */,
 				AB302636290BDE0A00279201 /* Moya in Frameworks */,
+				AB65B89B2916D7B700F49FF7 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		ABF9A51A291677BE00B551F9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ABF9A529291677CA00B551F9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -167,7 +154,6 @@
 		AB118ED22909BCDE005DEA4E /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				AB118ED42909BCEC005DEA4E /* Model */,
 				AB118ED62909BCFC005DEA4E /* View */,
 				AB118ED32909BCE7005DEA4E /* ViewModel */,
 				AB118ED52909BCF3005DEA4E /* Controller */,
@@ -181,13 +167,6 @@
 				AB118EDB2909BDA2005DEA4E /* MainScreenViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		AB118ED42909BCEC005DEA4E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		AB118ED52909BCF3005DEA4E /* Controller */ = {
@@ -210,19 +189,11 @@
 		AB118EDD290AFCB5005DEA4E /* ProfileScreen */ = {
 			isa = PBXGroup;
 			children = (
-				AB118EDE290AFCBE005DEA4E /* Model */,
 				AB118EE0290AFCE8005DEA4E /* View */,
 				AB118EE1290AFCEF005DEA4E /* ViewModel */,
 				AB118EE2290AFCF6005DEA4E /* Controller */,
 			);
 			path = ProfileScreen;
-			sourceTree = "<group>";
-		};
-		AB118EDE290AFCBE005DEA4E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		AB118EE0290AFCE8005DEA4E /* View */ = {
@@ -286,7 +257,6 @@
 		AB30261F290B135E00279201 /* SearchScreen */ = {
 			isa = PBXGroup;
 			children = (
-				AB302623290B137900279201 /* Model */,
 				AB302622290B137200279201 /* View */,
 				AB302621290B136D00279201 /* ViewModel */,
 				AB302620290B136900279201 /* Controller */,
@@ -317,13 +287,6 @@
 				AB302625290B139300279201 /* SearchScreenViewController.xib */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		AB302623290B137900279201 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		AB30262A290BC77200279201 /* Network */ = {
@@ -370,7 +333,6 @@
 		AB59CB9329105DCF00DCEE8E /* DetailScreen */ = {
 			isa = PBXGroup;
 			children = (
-				AB59CB9B2911266000DCEE8E /* Model */,
 				AB59CB9A2911265C00DCEE8E /* View */,
 				AB59CB992911265400DCEE8E /* ViewModel */,
 				AB59CB982911264E00DCEE8E /* Controller */,
@@ -402,13 +364,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		AB59CB9B2911266000DCEE8E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		AB91129A2912DB27009FFE4C /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +389,7 @@
 				AB9112B029145F7B009FFE4C /* shop.json */,
 				AB9112B329146781009FFE4C /* productsShop.json */,
 				AB040C48291510A500F607CC /* profile.json */,
+				AB1C6B3A2916EB410082FCBD /* auth.json */,
 				AB9112AD29145D53009FFE4C /* search.json */,
 			);
 			path = LottieAnimationJsons;
@@ -442,7 +398,6 @@
 		ABA62CC82912C718004ACCF7 /* BasketScreen */ = {
 			isa = PBXGroup;
 			children = (
-				ABA62CCC2912C746004ACCF7 /* Model */,
 				ABA62CCB2912C73F004ACCF7 /* View */,
 				ABA62CCA2912C72E004ACCF7 /* ViewModel */,
 				ABA62CC92912C728004ACCF7 /* Controller */,
@@ -475,18 +430,10 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		ABA62CCC2912C746004ACCF7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		ABE48895290707FD0065BCCA = {
 			isa = PBXGroup;
 			children = (
 				ABE488A0290707FD0065BCCA /* BazaarWay */,
-				ABF9A52D291677CA00B551F9 /* BazaarWayTests */,
 				ABF9A51E291677BE00B551F9 /* BazaarWayUITests */,
 				ABE4889F290707FD0065BCCA /* Products */,
 				AB302634290BDE0A00279201 /* Frameworks */,
@@ -498,7 +445,6 @@
 			children = (
 				ABE4889E290707FD0065BCCA /* BazaarWay.app */,
 				ABF9A51D291677BE00B551F9 /* BazaarWayUITests.xctest */,
-				ABF9A52C291677CA00B551F9 /* BazaarWayTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -646,14 +592,6 @@
 			path = BazaarWayUITests;
 			sourceTree = "<group>";
 		};
-		ABF9A52D291677CA00B551F9 /* BazaarWayTests */ = {
-			isa = PBXGroup;
-			children = (
-				ABF9A52E291677CA00B551F9 /* BazaarWayTests.swift */,
-			);
-			path = BazaarWayTests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -676,6 +614,7 @@
 				AB302635290BDE0A00279201 /* Moya */,
 				AB30263E290BE51F00279201 /* Kingfisher */,
 				AB9112A729145360009FFE4C /* Lottie */,
+				AB65B89A2916D7B700F49FF7 /* IQKeyboardManagerSwift */,
 			);
 			productName = BazaarWay;
 			productReference = ABE4889E290707FD0065BCCA /* BazaarWay.app */;
@@ -699,24 +638,6 @@
 			productReference = ABF9A51D291677BE00B551F9 /* BazaarWayUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		ABF9A52B291677CA00B551F9 /* BazaarWayTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ABF9A532291677CA00B551F9 /* Build configuration list for PBXNativeTarget "BazaarWayTests" */;
-			buildPhases = (
-				ABF9A528291677CA00B551F9 /* Sources */,
-				ABF9A529291677CA00B551F9 /* Frameworks */,
-				ABF9A52A291677CA00B551F9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				ABF9A531291677CA00B551F9 /* PBXTargetDependency */,
-			);
-			name = BazaarWayTests;
-			productName = BazaarWayTests;
-			productReference = ABF9A52C291677CA00B551F9 /* BazaarWayTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -731,10 +652,6 @@
 						CreatedOnToolsVersion = 14.0.1;
 					};
 					ABF9A51C291677BE00B551F9 = {
-						CreatedOnToolsVersion = 14.1;
-						TestTargetID = ABE4889D290707FD0065BCCA;
-					};
-					ABF9A52B291677CA00B551F9 = {
 						CreatedOnToolsVersion = 14.1;
 						TestTargetID = ABE4889D290707FD0065BCCA;
 					};
@@ -754,6 +671,7 @@
 				AB30262D290BC97100279201 /* XCRemoteSwiftPackageReference "Moya" */,
 				AB30263D290BE51E00279201 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				AB9112A629145360009FFE4C /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				AB65B8992916D7B700F49FF7 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = ABE4889F290707FD0065BCCA /* Products */;
 			projectDirPath = "";
@@ -761,7 +679,6 @@
 			targets = (
 				ABE4889D290707FD0065BCCA /* BazaarWay */,
 				ABF9A51C291677BE00B551F9 /* BazaarWayUITests */,
-				ABF9A52B291677CA00B551F9 /* BazaarWayTests */,
 			);
 		};
 /* End PBXProject section */
@@ -787,19 +704,13 @@
 				AB13047429098C7800A8BBA8 /* LaunchSplashViewController.xib in Resources */,
 				AB9112AE29145D53009FFE4C /* search.json in Resources */,
 				ABE488AE290707FF0065BCCA /* Assets.xcassets in Resources */,
+				AB1C6B3B2916EB410082FCBD /* auth.json in Resources */,
 				AB9112B429146781009FFE4C /* productsShop.json in Resources */,
 				AB118EDA2909BD2A005DEA4E /* MainScreenViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		ABF9A51B291677BE00B551F9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ABF9A52A291677CA00B551F9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -852,14 +763,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ABF9A528291677CA00B551F9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ABF9A52F291677CA00B551F9 /* BazaarWayTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -867,11 +770,6 @@
 			isa = PBXTargetDependency;
 			target = ABE4889D290707FD0065BCCA /* BazaarWay */;
 			targetProxy = ABF9A523291677BE00B551F9 /* PBXContainerItemProxy */;
-		};
-		ABF9A531291677CA00B551F9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = ABE4889D290707FD0065BCCA /* BazaarWay */;
-			targetProxy = ABF9A530291677CA00B551F9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1093,44 +991,6 @@
 			};
 			name = Release;
 		};
-		ABF9A533291677CA00B551F9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5DKBCS58WX;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.asimcanyagiz.BazaarWayTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BazaarWay.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BazaarWay";
-			};
-			name = Debug;
-		};
-		ABF9A534291677CA00B551F9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5DKBCS58WX;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.asimcanyagiz.BazaarWayTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BazaarWay.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BazaarWay";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1161,15 +1021,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ABF9A532291677CA00B551F9 /* Build configuration list for PBXNativeTarget "BazaarWayTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ABF9A533291677CA00B551F9 /* Debug */,
-				ABF9A534291677CA00B551F9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -1195,6 +1046,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 7.0.0;
+			};
+		};
+		AB65B8992916D7B700F49FF7 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				branch = master;
+				kind = branch;
 			};
 		};
 		AB9112A629145360009FFE4C /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
@@ -1227,6 +1086,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AB30263D290BE51E00279201 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		AB65B89A2916D7B700F49FF7 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB65B8992916D7B700F49FF7 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 		AB9112A729145360009FFE4C /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;

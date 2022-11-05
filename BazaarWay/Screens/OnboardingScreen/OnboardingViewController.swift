@@ -24,20 +24,18 @@ final class OnboardingViewController: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setup()
         style()
         layout()
     }
     
-    //Main Page Screen Transfer
+    // Functions for transfer to Main Screen
     @objc func basketButton(){
+        //Setting basket button destination
         let basketScreenViewModel = BasketScreenViewModel()
         let basketScreenViewController = BasketScreenViewController(viewModel: basketScreenViewModel)
         present(basketScreenViewController, animated: true, completion: nil)
     }
-    
-    
     @objc func setScreenTransfer(){
         let mainScreenViewModel = MainScreenViewModel()
         let mainScreenViewController = MainScreenViewController(viewModel: mainScreenViewModel)
@@ -52,15 +50,11 @@ final class OnboardingViewController: UIPageViewController {
         profileScreenViewController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person"))
         tabBarController.viewControllers = [mainScreenViewController, searchScreenViewController, profileScreenViewController]
         
+        //basket button settings
         let basketButtonImage = UIImage(systemName: "cart.fill")
         let basketBarButtonItem = UIBarButtonItem(image: basketButtonImage, style: .plain, target: self, action: #selector(basketButton))
         basketBarButtonItem.tintColor = .white
-        
         tabBarController.navigationItem.rightBarButtonItem = basketBarButtonItem
-        
-        
-
-
         tabBarController.navigationItem.hidesBackButton = true
         self.navigationController?.pushViewController(tabBarController, animated: true)
     }
@@ -78,13 +72,13 @@ extension OnboardingViewController {
         
         let page1 = PagesViewController(animationName: "shop",
                                         titleText: "Welcome to BazaarWay",
-                                        subtitleText: "Your place for good deal in bazaar with online shopping app BazaarWay.")
+                                        subtitleText: "The world’s smallest online store.")
         let page2 = PagesViewController(animationName: "search",
-                                        titleText: "Welcome to BazaarWay",
-                                        subtitleText: "Your place for good deal in bazaar with online shopping app BazaarWay.")
+                                        titleText: "A online shopping platform",
+                                        subtitleText: "The greatest journey of online shop.")
         let page3 = PagesViewController(animationName: "buy",
-                                        titleText: "Welcome to BazaarWay",
-                                        subtitleText: "Your place for good deal in bazaar with online shopping app BazaarWay.")
+                                        titleText: "Your stores. Your place",
+                                        subtitleText: "Whatever you’ve got in mind, we’ve got inside.")
         
         pages.append(page1)
         pages.append(page2)
@@ -134,6 +128,23 @@ extension OnboardingViewController {
         skipButtonTopAnchor?.isActive = true
         nextButtonTopAnchor?.isActive = true
         pageControlBottomAnchor?.isActive = true
+    }
+}
+
+extension UIPageViewController {
+    
+    func goToNextPage(animated: Bool = true, completion: ((Bool) -> Void)? = nil) {
+        guard let currentPage = viewControllers?[0] else { return }
+        guard let nextPage = dataSource?.pageViewController(self, viewControllerAfter: currentPage) else { return }
+        
+        setViewControllers([nextPage], direction: .forward, animated: animated, completion: completion)
+    }
+    
+    func goToPreviousPage(animated: Bool = true, completion: ((Bool) -> Void)? = nil) {
+        guard let currentPage = viewControllers?[0] else { return }
+        guard let prevPage = dataSource?.pageViewController(self, viewControllerBefore: currentPage) else { return }
+        
+        setViewControllers([prevPage], direction: .forward, animated: animated, completion: completion)
     }
 }
 
@@ -206,21 +217,4 @@ extension OnboardingViewController {
     }
 }
 
-// MARK: - Extensions
 
-extension UIPageViewController {
-    
-    func goToNextPage(animated: Bool = true, completion: ((Bool) -> Void)? = nil) {
-        guard let currentPage = viewControllers?[0] else { return }
-        guard let nextPage = dataSource?.pageViewController(self, viewControllerAfter: currentPage) else { return }
-        
-        setViewControllers([nextPage], direction: .forward, animated: animated, completion: completion)
-    }
-    
-    func goToPreviousPage(animated: Bool = true, completion: ((Bool) -> Void)? = nil) {
-        guard let currentPage = viewControllers?[0] else { return }
-        guard let prevPage = dataSource?.pageViewController(self, viewControllerBefore: currentPage) else { return }
-        
-        setViewControllers([prevPage], direction: .forward, animated: animated, completion: completion)
-    }
-}

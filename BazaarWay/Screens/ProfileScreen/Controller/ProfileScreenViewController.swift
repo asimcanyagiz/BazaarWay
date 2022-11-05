@@ -12,7 +12,6 @@ import Lottie
 class ProfileScreenViewController: UIViewController, AlertPresentable {
     
     //MARK: - UI ELEMENTS
-    
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
@@ -38,7 +37,6 @@ class ProfileScreenViewController: UIViewController, AlertPresentable {
         super.viewDidLoad()
 
         viewModel.userStatus(controller: self)
-        
         setAnimation()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -46,13 +44,13 @@ class ProfileScreenViewController: UIViewController, AlertPresentable {
         viewModel.userStatus(controller: self)
     }
     
+    //MARK: - Functions
     
     @IBAction func didAuthButtonPressed(_ sender: UIButton) {
         if sender.titleLabel?.text == "Log In" {
             viewModel.logIn(controller: self)
         }else {
             viewModel.logOut(controller: self)
-            
         }
     }
     

@@ -10,13 +10,9 @@ import UIKit
 class MainScreenCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var titleLabel: UILabel!
-    
     @IBOutlet weak var cellStackView: UIStackView!
-    
     @IBOutlet weak var priceLabel: UILabel!
-    
     @IBOutlet weak var imagesView: UIView!
     
     override func awakeFromNib() {
@@ -24,7 +20,7 @@ class MainScreenCollectionViewCell: UICollectionViewCell {
         // Initialization code
         
         //Customize Cell
-        //Customize ImageBorder
+        //Customize Border
         imagesView.translatesAutoresizingMaskIntoConstraints = false
         imagesView.clipsToBounds = true
         cellStackView.layer.cornerRadius = 12

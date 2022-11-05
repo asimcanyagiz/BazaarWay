@@ -17,13 +17,14 @@ enum AuthViewModelChange {
 
 final class AuthViewModel {
     
+    //Firebase
     private let db = Firestore.firestore()
     private let defaults = UserDefaults.standard
     
     var changeHandler: ((AuthViewModelChange) -> Void)?
     
     //Function for signup
-    func signUp(email: String, password: String) {
+    func signUp(email: String, password: String, username: String) {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let error = error {
                 self.changeHandler?(.didErrorOccurred(error))
@@ -31,7 +32,7 @@ final class AuthViewModel {
             }
             
             //We create a User with User Model
-            let user = User(username: authResult?.user.displayName,
+            let user = User(username: username,
                             email: authResult?.user.email,
                             basket: [])
             do {

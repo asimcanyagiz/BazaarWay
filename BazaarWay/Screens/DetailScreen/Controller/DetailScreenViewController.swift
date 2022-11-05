@@ -31,11 +31,11 @@ final class DetailScreenViewController: UIViewController, AlertPresentable {
     @IBOutlet weak var productDetail: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
     
-    var quantity = 1
-    
     //MARK: - Product Data Set
     var products: Products?
-
+    
+    //MARK: - Life Cycle
+    var quantity = 1
     override func viewDidLoad() {
         super.viewDidLoad()
         productImage.kf.setImage(with: products?.imageURL)

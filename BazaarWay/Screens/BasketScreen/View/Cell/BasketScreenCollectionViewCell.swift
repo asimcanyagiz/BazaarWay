@@ -31,9 +31,11 @@ class BasketScreenCollectionViewCell: UICollectionViewCell {
     @IBAction func didStepperPressed(_ sender: UIStepper) {
         if sender.value == 0 {
             viewModel.removeBasket(basketProductTitle: titleLabel.text!)
+            //We send notification to controller
             NotificationCenter.default.post(name: Notification.Name("sendAlert"), object: nil)
         } else {
             let number = Int(sender.value)
+            //We send notification to controller
             NotificationCenter.default.post(name: Notification.Name("updateData"), object: nil, userInfo: ["quantityNumber" : number,
                                                                                                            "index" : index])
         }

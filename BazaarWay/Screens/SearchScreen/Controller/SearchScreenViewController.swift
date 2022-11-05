@@ -24,13 +24,9 @@ final class SearchScreenViewController: UIViewController {
     }
     
     //MARK: - UI Elements
-    
-    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    
     
     //MARK: - Life Cycle
     
@@ -49,6 +45,7 @@ final class SearchScreenViewController: UIViewController {
         //SearchBar adaption
         stackView.addSubview(viewModel.addSearchBar(controller: self))
         
+        //api enums
         viewModel.fetchProducts()
         viewModel.changeHandler = { change in
             switch change {
@@ -67,12 +64,7 @@ final class SearchScreenViewController: UIViewController {
         viewModel.fetchProducts(categoryText: title!)
         collectionView.reloadData()
     }
-    
-    
-    
 }
-
-
 
 //MARK: - Delegates
 extension SearchScreenViewController: UICollectionViewDelegateFlowLayout {

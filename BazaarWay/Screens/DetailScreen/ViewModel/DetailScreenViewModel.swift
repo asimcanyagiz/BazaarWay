@@ -17,10 +17,8 @@ final class DetailScreenViewModel: UserDefaultsAccessible {
     private let db = Firestore.firestore()
     private let defaults = UserDefaults.standard
     
-    
-    
-    
     //MARK: - Add Basket
+    //we create string:any and saving to firebase basket database
     func addBasket(productsData: Products?, quantity: Int) {
         let basketProduct = [
             "id": productsData?.id as Any,
@@ -36,23 +34,24 @@ final class DetailScreenViewModel: UserDefaultsAccessible {
               let uid = defaults.string(forKey: UserDefaultConstants.uid.rawValue) else {
             return
         }
+        
         removeBasket(basketProductTitle: productsData!.title, newProductId: id)
         
         db.collection("users").document(uid).updateData([
             "basket": FieldValue.arrayUnion([id])
         ])
-        
+        //We send notification to basket for reload data
         _ = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: false) { timer in
             NotificationCenter.default.post(name: Notification.Name("reloadData"), object: nil)
         }
     }
     
+    //For checking the product and if there was a same product we delete for update with new quantity
     func removeBasket(basketProductTitle: String, newProductId: Any){
         
         guard let uid = uid else {
             return
         }
-        
         db.runTransaction { (trans, errorPointer) -> Any? in
             let doc: DocumentSnapshot
             let docRef = self.db.collection("users").document(uid)

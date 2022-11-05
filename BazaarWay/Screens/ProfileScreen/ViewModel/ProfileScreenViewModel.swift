@@ -7,11 +7,15 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseFirestore
 import UIKit
 
-final class ProfileScreenViewModel {
+final class ProfileScreenViewModel: UserDefaultsAccessible {
     
+    private let db = Firestore.firestore()
+    private let defaults = UserDefaults.standard
     
+   //MARK: - Firebase Auth operation functions
     func logOut(controller: ProfileScreenViewController) {
         
         controller.showAlert(title: "Warning",
@@ -35,6 +39,10 @@ final class ProfileScreenViewModel {
     }
     
     func userStatus(controller: ProfileScreenViewController){
+        guard let uid = uid else {
+            return
+        }
+        
         let user = Auth.auth().currentUser;
         if (user == nil) {
             // there is no user signed in when user is nil
@@ -42,8 +50,19 @@ final class ProfileScreenViewModel {
             controller.userNameLabel.text = ""
             controller.emailLabel.text = ""
         } else {
+            
+            var username = "404"
+            db.collection("users").document(uid).getDocument() { (document, error) in
+                if let document = document, document.exists {
+                    let property = document.get("username")
+                    username = property as! String
+                } else {
+                    username = "404"
+                }
+            
             controller.logButton.setTitle("Log Out",for:.normal)
-            controller.userNameLabel.text = user?.uid
+            controller.userNameLabel.text = username
+            }
             controller.emailLabel.text = user?.email
         }
     }

@@ -30,8 +30,8 @@ final class BasketScreenViewModel: UserDefaultsAccessible {
         }
     }
     
+    //Function for get basket data
     func getBasket(_ completion: @escaping (Error?) -> Void) {
-        
         basketList = []
         
         guard let uid = uid else {
@@ -42,12 +42,11 @@ final class BasketScreenViewModel: UserDefaultsAccessible {
             guard (querySnapshot?.data()) != nil else {
                 return
             }
-            
             self.basketList = querySnapshot?.get("basket") as? [[String: Any]]
         }
     }
     
-    
+    //Function for remove products from basket data
     func removeBasket(basketProductTitle: String){
         
         guard let uid = uid else {
@@ -99,6 +98,7 @@ final class BasketScreenViewModel: UserDefaultsAccessible {
         }
     }
     
+    //Function for check products if exist remove from basket data
     func checkBasket(basketProductTitle: String, newProductId: Any){
         
         guard let uid = uid else {
@@ -156,7 +156,6 @@ final class BasketScreenViewModel: UserDefaultsAccessible {
         }
     }
     
-    //Call the current photo
     func productsForIndexPath(_ indexPath: IndexPath) -> [String : Any]? {
         return basketList?[indexPath.row]
     }
@@ -166,7 +165,6 @@ final class BasketScreenViewModel: UserDefaultsAccessible {
     }
     
     func totalCost() -> String {
-        
         let total = basketList!.compactMap { (($0["price"] as? Double)!) * (($0["quantity"] as? Double)!)}.reduce(0, +)
         return String(format: "%.2f", total)
     }

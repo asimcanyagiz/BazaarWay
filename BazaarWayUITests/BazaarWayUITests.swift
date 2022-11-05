@@ -118,7 +118,9 @@ final class BazaarWayUITests: XCTestCase {
         passwordTextField.tap()
         passwordTextField.typeText("123456")
         
-        let authButton = app.buttons["Button"]
+        app.toolbars["Toolbar"].buttons["Done"].tap()
+        
+        let authButton = app.buttons["Auth"]
         XCTAssertTrue(authButton.exists)
         authButton.tap()
                 
@@ -166,7 +168,7 @@ final class BazaarWayUITests: XCTestCase {
         xStaticText.tap()
         
         let segmentedJewelery = app/*@START_MENU_TOKEN@*/.buttons["Jewelery"]/*[[".segmentedControls.buttons[\"Jewelery\"]",".buttons[\"Jewelery\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-        XCTAssertTrue(segmentedJewelery.waitForExistence(timeout: 2)exists)
+        XCTAssertTrue(segmentedJewelery.waitForExistence(timeout: 2))
         segmentedJewelery.tap()
         XCTAssertTrue(element.exists)
         element.tap()
