@@ -148,6 +148,10 @@ final class BasketScreenViewModel: UserDefaultsAccessible {
                 self.db.collection("users").document(uid).updateData([
                     "basket": FieldValue.arrayUnion([newProductId])
                 ])
+                _ = Timer.scheduledTimer(withTimeInterval: 1.8, repeats: false) { timer in
+                    NotificationCenter.default.post(name: Notification.Name("reloadData"), object: nil)
+                }
+                
             }
         }
     }
@@ -159,6 +163,12 @@ final class BasketScreenViewModel: UserDefaultsAccessible {
     
     var numberOfRows: Int {
         basketList?.count ?? .zero
+    }
+    
+    func totalCost() -> String {
+        
+        let total = basketList!.compactMap { (($0["price"] as? Double)!) * (($0["quantity"] as? Double)!)}.reduce(0, +)
+        return String(format: "%.2f", total)
     }
     
     

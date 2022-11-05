@@ -41,6 +41,10 @@ final class DetailScreenViewModel: UserDefaultsAccessible {
         db.collection("users").document(uid).updateData([
             "basket": FieldValue.arrayUnion([id])
         ])
+        
+        _ = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: false) { timer in
+            NotificationCenter.default.post(name: Notification.Name("reloadData"), object: nil)
+        }
     }
     
     func removeBasket(basketProductTitle: String, newProductId: Any){
@@ -95,6 +99,4 @@ final class DetailScreenViewModel: UserDefaultsAccessible {
             }
         }
     }
-    
-    
 }

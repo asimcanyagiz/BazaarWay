@@ -38,8 +38,8 @@ extension AlertPresentable where Self: UIViewController {
                   message: error.localizedDescription)
     }
     
-    func showSuccess(){
+    func showSuccess(informMessage: String){
         showAlert(title: "Succes",
-                  message: "Deleted from basket")
+                  message: informMessage)
     }
 }

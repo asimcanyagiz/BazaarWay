@@ -57,7 +57,27 @@
 		ABE488CD29070F470065BCCA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE488CC29070F470065BCCA /* User.swift */; };
 		ABF8078A290D8CE900E9E52E /* MainScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF80788290D8CE900E9E52E /* MainScreenCollectionViewCell.swift */; };
 		ABF8078B290D8CE900E9E52E /* MainScreenCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABF80789290D8CE900E9E52E /* MainScreenCollectionViewCell.xib */; };
+		ABF9A520291677BE00B551F9 /* BazaarWayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF9A51F291677BE00B551F9 /* BazaarWayUITests.swift */; };
+		ABF9A522291677BE00B551F9 /* BazaarWayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF9A521291677BE00B551F9 /* BazaarWayUITestsLaunchTests.swift */; };
+		ABF9A52F291677CA00B551F9 /* BazaarWayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF9A52E291677CA00B551F9 /* BazaarWayTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ABF9A523291677BE00B551F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABE48896290707FD0065BCCA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABE4889D290707FD0065BCCA;
+			remoteInfo = BazaarWay;
+		};
+		ABF9A530291677CA00B551F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABE48896290707FD0065BCCA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABE4889D290707FD0065BCCA;
+			remoteInfo = BazaarWay;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AB040C48291510A500F607CC /* profile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = profile.json; sourceTree = "<group>"; };
@@ -107,6 +127,11 @@
 		ABE488CC29070F470065BCCA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		ABF80788290D8CE900E9E52E /* MainScreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCollectionViewCell.swift; sourceTree = "<group>"; };
 		ABF80789290D8CE900E9E52E /* MainScreenCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainScreenCollectionViewCell.xib; sourceTree = "<group>"; };
+		ABF9A51D291677BE00B551F9 /* BazaarWayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BazaarWayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABF9A51F291677BE00B551F9 /* BazaarWayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BazaarWayUITests.swift; sourceTree = "<group>"; };
+		ABF9A521291677BE00B551F9 /* BazaarWayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BazaarWayUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ABF9A52C291677CA00B551F9 /* BazaarWayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BazaarWayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABF9A52E291677CA00B551F9 /* BazaarWayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BazaarWayTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +144,20 @@
 				AB13046529071AD600A8BBA8 /* FirebaseAuth in Frameworks */,
 				AB13046729071AD600A8BBA8 /* FirebaseFirestore in Frameworks */,
 				AB302636290BDE0A00279201 /* Moya in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABF9A51A291677BE00B551F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABF9A529291677CA00B551F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +486,8 @@
 			isa = PBXGroup;
 			children = (
 				ABE488A0290707FD0065BCCA /* BazaarWay */,
+				ABF9A52D291677CA00B551F9 /* BazaarWayTests */,
+				ABF9A51E291677BE00B551F9 /* BazaarWayUITests */,
 				ABE4889F290707FD0065BCCA /* Products */,
 				AB302634290BDE0A00279201 /* Frameworks */,
 			);
@@ -456,6 +497,8 @@
 			isa = PBXGroup;
 			children = (
 				ABE4889E290707FD0065BCCA /* BazaarWay.app */,
+				ABF9A51D291677BE00B551F9 /* BazaarWayUITests.xctest */,
+				ABF9A52C291677CA00B551F9 /* BazaarWayTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -594,6 +637,23 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		ABF9A51E291677BE00B551F9 /* BazaarWayUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ABF9A51F291677BE00B551F9 /* BazaarWayUITests.swift */,
+				ABF9A521291677BE00B551F9 /* BazaarWayUITestsLaunchTests.swift */,
+			);
+			path = BazaarWayUITests;
+			sourceTree = "<group>";
+		};
+		ABF9A52D291677CA00B551F9 /* BazaarWayTests */ = {
+			isa = PBXGroup;
+			children = (
+				ABF9A52E291677CA00B551F9 /* BazaarWayTests.swift */,
+			);
+			path = BazaarWayTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -621,6 +681,42 @@
 			productReference = ABE4889E290707FD0065BCCA /* BazaarWay.app */;
 			productType = "com.apple.product-type.application";
 		};
+		ABF9A51C291677BE00B551F9 /* BazaarWayUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABF9A527291677BE00B551F9 /* Build configuration list for PBXNativeTarget "BazaarWayUITests" */;
+			buildPhases = (
+				ABF9A519291677BE00B551F9 /* Sources */,
+				ABF9A51A291677BE00B551F9 /* Frameworks */,
+				ABF9A51B291677BE00B551F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABF9A524291677BE00B551F9 /* PBXTargetDependency */,
+			);
+			name = BazaarWayUITests;
+			productName = BazaarWayUITests;
+			productReference = ABF9A51D291677BE00B551F9 /* BazaarWayUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		ABF9A52B291677CA00B551F9 /* BazaarWayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABF9A532291677CA00B551F9 /* Build configuration list for PBXNativeTarget "BazaarWayTests" */;
+			buildPhases = (
+				ABF9A528291677CA00B551F9 /* Sources */,
+				ABF9A529291677CA00B551F9 /* Frameworks */,
+				ABF9A52A291677CA00B551F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABF9A531291677CA00B551F9 /* PBXTargetDependency */,
+			);
+			name = BazaarWayTests;
+			productName = BazaarWayTests;
+			productReference = ABF9A52C291677CA00B551F9 /* BazaarWayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -628,11 +724,19 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					ABE4889D290707FD0065BCCA = {
 						CreatedOnToolsVersion = 14.0.1;
+					};
+					ABF9A51C291677BE00B551F9 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = ABE4889D290707FD0065BCCA;
+					};
+					ABF9A52B291677CA00B551F9 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = ABE4889D290707FD0065BCCA;
 					};
 				};
 			};
@@ -656,6 +760,8 @@
 			projectRoot = "";
 			targets = (
 				ABE4889D290707FD0065BCCA /* BazaarWay */,
+				ABF9A51C291677BE00B551F9 /* BazaarWayUITests */,
+				ABF9A52B291677CA00B551F9 /* BazaarWayTests */,
 			);
 		};
 /* End PBXProject section */
@@ -683,6 +789,20 @@
 				ABE488AE290707FF0065BCCA /* Assets.xcassets in Resources */,
 				AB9112B429146781009FFE4C /* productsShop.json in Resources */,
 				AB118EDA2909BD2A005DEA4E /* MainScreenViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABF9A51B291677BE00B551F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABF9A52A291677CA00B551F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -723,7 +843,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ABF9A519291677BE00B551F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABF9A520291677BE00B551F9 /* BazaarWayUITests.swift in Sources */,
+				ABF9A522291677BE00B551F9 /* BazaarWayUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABF9A528291677CA00B551F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABF9A52F291677CA00B551F9 /* BazaarWayTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ABF9A524291677BE00B551F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABE4889D290707FD0065BCCA /* BazaarWay */;
+			targetProxy = ABF9A523291677BE00B551F9 /* PBXContainerItemProxy */;
+		};
+		ABF9A531291677CA00B551F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABE4889D290707FD0065BCCA /* BazaarWay */;
+			targetProxy = ABF9A530291677CA00B551F9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		ABE488AF290707FF0065BCCA /* LaunchScreen.storyboard */ = {
@@ -907,6 +1057,80 @@
 			};
 			name = Release;
 		};
+		ABF9A525291677BE00B551F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5DKBCS58WX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.asimcanyagiz.BazaarWayUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BazaarWay;
+			};
+			name = Debug;
+		};
+		ABF9A526291677BE00B551F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5DKBCS58WX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.asimcanyagiz.BazaarWayUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BazaarWay;
+			};
+			name = Release;
+		};
+		ABF9A533291677CA00B551F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5DKBCS58WX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.asimcanyagiz.BazaarWayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BazaarWay.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BazaarWay";
+			};
+			name = Debug;
+		};
+		ABF9A534291677CA00B551F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5DKBCS58WX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.asimcanyagiz.BazaarWayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BazaarWay.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BazaarWay";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -924,6 +1148,24 @@
 			buildConfigurations = (
 				ABE488B6290707FF0065BCCA /* Debug */,
 				ABE488B7290707FF0065BCCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABF9A527291677BE00B551F9 /* Build configuration list for PBXNativeTarget "BazaarWayUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABF9A525291677BE00B551F9 /* Debug */,
+				ABF9A526291677BE00B551F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABF9A532291677CA00B551F9 /* Build configuration list for PBXNativeTarget "BazaarWayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABF9A533291677CA00B551F9 /* Debug */,
+				ABF9A534291677CA00B551F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -62,6 +62,7 @@ final class BasketScreenViewController: UIViewController, AlertPresentable {
         viewModel.changeHandler = { change in
             switch change {
             case .didFetchBasket:
+                self.totalCostLabel.text = self.viewModel.totalCost()
                 self.collectionView.reloadData()
                 
             case .didErrorOccurred(let error):
@@ -71,10 +72,12 @@ final class BasketScreenViewController: UIViewController, AlertPresentable {
         
         closeButton.layer.cornerRadius = closeButton.frame.size.width / 2
         closeButton.clipsToBounds = true
+        totalCostLabel.text = viewModel.totalCost()
     }
     
     @objc func showAlertForTime (notification: NSNotification){
-        self.showSuccess()
+        self.showSuccess(informMessage: "Succesfully product removed from basket!")
+        self.totalCostLabel.text = self.viewModel.totalCost()
     }
     
     @objc func reloadingData (notification: NSNotification){
@@ -87,6 +90,9 @@ final class BasketScreenViewController: UIViewController, AlertPresentable {
     }
 
     
+    @IBAction func didPurchaseButtonPressed(_ sender: UIButton) {
+        self.showSuccess(informMessage: "This option will be avaible soon!")
+    }
     
     
     @IBAction func didCloseButtonPressed(_ sender: UIButton) {
@@ -117,9 +123,21 @@ final class BasketScreenViewController: UIViewController, AlertPresentable {
         db.collection("users").document(uid).updateData([
             "basket": FieldValue.arrayUnion([id])
         ])
+        
+        self.totalCostLabel.text = self.viewModel.totalCost()
+        self.showSuccess(informMessage: "Succesfully basket updated for see the changes reopen the basket")
+        _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
+            if UIViewController.self != BasketScreenViewModel.self {
+                self.dismiss(animated: true, completion: nil)
+                _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { timer in
+                    self.dismiss(animated: true, completion: nil)
+                }
+            } else {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        
     }
-    
-    
 }
 
 //MARK: - Delegates

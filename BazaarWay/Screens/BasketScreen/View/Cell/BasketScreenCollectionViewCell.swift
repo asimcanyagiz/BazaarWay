@@ -37,9 +37,7 @@ class BasketScreenCollectionViewCell: UICollectionViewCell {
             NotificationCenter.default.post(name: Notification.Name("updateData"), object: nil, userInfo: ["quantityNumber" : number,
                                                                                                            "index" : index])
         }
-        
         quantityLabel.text = String(Int(sender.value))
-        print(titleLabel.text!)
     }
     
     

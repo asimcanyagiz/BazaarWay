@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class DetailScreenViewController: UIViewController {
+final class DetailScreenViewController: UIViewController, AlertPresentable {
     
     // MARK: - View Model
     private let viewModel: DetailScreenViewModel
@@ -53,7 +53,7 @@ final class DetailScreenViewController: UIViewController {
     
     
     @IBAction func didStepperPressed(_ sender: UIStepper) {
-        quantityLabel.text = String(sender.value)
+        quantityLabel.text = String(Int(sender.value))
         quantity = Int(sender.value)
     }
     
@@ -61,6 +61,7 @@ final class DetailScreenViewController: UIViewController {
     
     @IBAction func didAddButtonPressed(_ sender: UIButton) {
         viewModel.addBasket(productsData: products, quantity: quantity)
+        self.showSuccess(informMessage: "Succesfully added to basket!")
         
     }
     

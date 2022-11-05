@@ -19,7 +19,6 @@ final class ProfileScreenViewModel {
                              cancelButtonTitle: "Cancel") { _ in
             do {
                 try Auth.auth().signOut()
-                print("succesfully logout")
                 controller.logButton.setTitle("Log In",for:.normal)
             } catch {
                 controller.showError(error)

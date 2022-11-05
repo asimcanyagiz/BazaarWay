@@ -67,8 +67,7 @@ final class AuthViewController: UIViewController, AlertPresentable {
             switch change {
             case .didErrorOccurred(let error):
                 self.showError(error)
-            case .didSignUpSuccessful:
-                print("SIGN UP SUCCESSFUL!")
+            case .didSignUpSuccessful: break
             }
         }
         

@@ -28,6 +28,28 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "ABF9A51C291677BE00B551F9"
+               BuildableName = "BazaarWayUITests.xctest"
+               BlueprintName = "BazaarWayUITests"
+               ReferencedContainer = "container:BazaarWay.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "ABF9A52B291677CA00B551F9"
+               BuildableName = "BazaarWayTests.xctest"
+               BlueprintName = "BazaarWayTests"
+               ReferencedContainer = "container:BazaarWay.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
