@@ -1,5 +1,4 @@
 # BazaarWay
-Finish Project for iOS Bootcamp Pazarama Patika.dev
 ![My project-1](https://user-images.githubusercontent.com/89473605/200177188-93deadca-6003-452a-a2da-3f741639ae56.png)
 
 
