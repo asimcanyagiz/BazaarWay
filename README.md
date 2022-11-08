@@ -82,10 +82,20 @@ You can [download](https://github.com/asimcanyagiz/BazaarWay) the latest install
   <tr>
     <td><img src="https://img.shields.io/badge/Swift-FA7343?style=for-the-badge&logo=swift&logoColor=white"/></td>
     <td><img src="https://img.shields.io/badge/Xcode-007ACC?style=for-the-badge&logo=Xcode&logoColor=white"></td>
+    <td><img src="https://img.shields.io/badge/UIKit-043b5c?style=for-the-badge&logo=swift&logoColor=white"></td>
   </tr>
   <tr>
     <td><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></td>
     <td><img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white"/></td>
+    <td><img src="https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=red"/></td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/IQKeyboardManager-298D46?style=for-the-badge&logoColor=white"/></td>
+    <td><img src="https://img.shields.io/badge/moya-cf2f74?style=for-the-badge&logoColor=red"/></td>
+    <td><img src="https://img.shields.io/badge/KingFisher-5091CD?style=for-the-badge&&logoColor=white"/></td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/Auto_Layout-fbc093?style=for-the-badge&logo=swift&logoColor=white"/></td>
   </tr>
 </table>
 
