@@ -43,7 +43,7 @@ final class SearchScreenViewController: UIViewController {
         collectionView.register(nib, forCellWithReuseIdentifier: "cell")
         
         //SearchBar adaption
-        stackView.addSubview(viewModel.addSearchBar(controller: self))
+        stackView.addSubview(addSearchBar(controller: self))
         
         //api enums
         viewModel.fetchProducts()
@@ -63,6 +63,17 @@ final class SearchScreenViewController: UIViewController {
         let title = segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex)
         viewModel.fetchProducts(categoryText: title!)
         collectionView.reloadData()
+    }
+    
+    func addSearchBar(controller: SearchScreenViewController) -> UISearchBar{
+        let searchBar:UISearchBar = UISearchBar()
+        searchBar.searchBarStyle = UISearchBar.Style.prominent
+        searchBar.placeholder = " Search..."
+        searchBar.sizeToFit()
+        searchBar.isTranslucent = false
+        searchBar.backgroundImage = UIImage()
+        searchBar.delegate = controller
+        return searchBar
     }
 }
 

@@ -8,7 +8,6 @@
 import Foundation
 import FirebaseAuth
 import FirebaseFirestore
-import UIKit
 
 final class ProfileScreenViewModel: UserDefaultsAccessible {
     

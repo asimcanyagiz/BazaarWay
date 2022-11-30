@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import UIKit
+//import UIKit
 import Moya
 
 //Cases for change Product
@@ -18,16 +18,7 @@ enum ProductChanges {
 
 final class SearchScreenViewModel {
     
-    func addSearchBar(controller: SearchScreenViewController) -> UISearchBar{
-        let searchBar:UISearchBar = UISearchBar()
-        searchBar.searchBarStyle = UISearchBar.Style.prominent
-        searchBar.placeholder = " Search..."
-        searchBar.sizeToFit()
-        searchBar.isTranslucent = false
-        searchBar.backgroundImage = UIImage()
-        searchBar.delegate = controller
-        return searchBar
-    }
+    
     
     
     var changeHandler: ((ProductChanges) -> Void)?

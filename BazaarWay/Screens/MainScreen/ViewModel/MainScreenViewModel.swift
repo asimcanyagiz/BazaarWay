@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 import Moya
 
 //Cases for change Product

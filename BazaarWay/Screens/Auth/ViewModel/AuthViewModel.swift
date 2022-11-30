@@ -36,7 +36,7 @@ final class AuthViewModel {
                             email: authResult?.user.email,
                             basket: [])
             do {
-                guard let data = try user.dictionary,
+                guard let data = user.dictionary,
                       let id = authResult?.user.uid else {
                     return
                 }
@@ -51,8 +51,6 @@ final class AuthViewModel {
                         self.changeHandler?(.didSignUpSuccessful)
                     }
                 }
-            } catch {
-                self.changeHandler?(.didErrorOccurred(error))
             }
         }
     }
